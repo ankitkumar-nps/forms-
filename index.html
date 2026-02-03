@@ -79,7 +79,7 @@
     resize:vertical; min-height:48px; font-size:11px;
   }
   .field input[type="text"]:focus, .field textarea:focus {
-    border-color:#000; background:#fafafa;
+    border-color:#2563eb; background:#fafafa;
   }
 
   /* ─── CHECKBOXES / RADIOS ─── */
@@ -88,7 +88,7 @@
     gap:6px 18px; align-items:center; margin-bottom:10px;
   }
   .check-row .check-item { display:flex; align-items:center; gap:5px; font-size:11px; }
-  .check-row .check-item input { width:13px; height:13px; accent-color:#000; cursor:pointer; }
+  .check-row .check-item input { width:13px; height:13px; accent-color:#2563eb; cursor:pointer; }
   .check-row .check-item label {
     cursor:pointer; text-transform:none;
     font-weight:400; letter-spacing:0; margin:0;
@@ -109,7 +109,7 @@
     text-align:center; cursor:pointer; position:relative;
   }
   .readiness-card input[type="radio"] { position:absolute; opacity:0; width:0; height:0; }
-  .readiness-card:has(input:checked) { background:#000; color:#fff; }
+  .readiness-card:has(input:checked) { background:#2563eb; color:#fff; border-color:#2563eb; }
   .readiness-card .r-num { font-size:15px; font-weight:700; }
   .readiness-card .r-label { font-size:9px; margin-top:2px; text-transform:uppercase; letter-spacing:0.3px; }
 
@@ -120,7 +120,7 @@
     display:flex; align-items:center; gap:8px;
     font-size:11px; cursor:pointer;
   }
-  .photo-box input { accent-color:#000; width:13px; height:13px; }
+  .photo-box input { accent-color:#2563eb; width:13px; height:13px; }
   .photo-box label { cursor:pointer; margin:0; text-transform:none; font-weight:400; letter-spacing:0; }
 
   /* ─── SUBMIT ─── */
@@ -129,11 +129,11 @@
     padding-top:16px; display:flex; justify-content:center; gap:16px;
   }
   .btn-submit {
-    background:#000; color:#fff; border:none; font-family:inherit;
+    background:#2563eb; color:#fff; border:none; font-family:inherit;
     font-size:12px; font-weight:600; text-transform:uppercase;
     letter-spacing:1px; padding:10px 36px; cursor:pointer;
   }
-  .btn-submit:hover { background:#333; }
+  .btn-submit:hover { background:#1d4ed8; }
   .btn-reset {
     background:#fff; color:#000; border:1px solid #000;
     font-family:inherit; font-size:11px; padding:10px 28px;
@@ -233,14 +233,44 @@
     .page { box-shadow:none; width:100%; padding:40px 48px; min-height:auto; page-break-after:always; }
     .submit-bar { display:none; }
     input[type="text"], textarea { background:transparent !important; }
+    
+    /* Prevent option stacking */
+    .check-row {
+      display:flex !important;
+      flex-wrap:wrap !important;
+      gap:6px 18px !important;
+    }
+    .check-row .check-item {
+      display:inline-flex !important;
+      break-inside:avoid !important;
+    }
+    .readiness-row {
+      display:flex !important;
+      gap:8px !important;
+    }
+    .readiness-card {
+      flex:1 !important;
+      break-inside:avoid !important;
+    }
   }
   @media (max-width:840px) {
-    .page { width:100%; padding:32px 24px; }
+    body { padding:20px 10px; }
+    .page { width:100%; padding:24px 16px; }
     .row { flex-direction:column; gap:10px; }
     .row .field.narrow { flex:unset; }
     .photo-grid { grid-template-columns:repeat(2,1fr); }
     .readiness-row { flex-wrap:wrap; }
-    .page-footer { position:relative; bottom:auto; left:auto; right:auto; margin-top:30px; }
+    .check-row { gap:4px 12px; font-size:10px; }
+    .header h1 { font-size:18px; }
+    .header-instructions { flex-direction:column; gap:8px; }
+  }
+  @media (max-width:480px) {
+    .page { padding:20px 12px; }
+    .header h1 { font-size:16px; }
+    .section-title { font-size:11px; }
+    .photo-grid { grid-template-columns:1fr; }
+    .readiness-row { flex-direction:column; }
+    .readiness-card { width:100%; }
   }
 </style>
 </head>
@@ -388,8 +418,8 @@
             <div class="check-item"><input type="checkbox" id="c2a"><label for="c2a">RS-422</label></div>
             <div class="check-item"><input type="checkbox" id="c3"><label for="c3">RS-232</label></div>
             <div class="check-item"><input type="checkbox" id="c4"><label for="c4">PROFINET / PROFIBUS</label></div>
-            <div class="check-item"><input type="checkbox" id="c6"><label for="c6">Type C</label></div>
             <div class="check-item"><input type="checkbox" id="c7"><label for="c7">Type A</label></div>
+            <div class="check-item"><input type="checkbox" id="c6"><label for="c6">Type C</label></div>
             <div class="check-item"><input type="checkbox" id="c5"><label for="c5">Not Visible</label></div>
           </div>
         </div>
@@ -430,15 +460,33 @@
       </div>
     </div>
 
-    <!-- 4 -->
+    <!-- 4 - SPLIT INTO HMI AND COMPUTER -->
     <div class="section">
-      <div class="section-title">4 &nbsp; HMI / Computer</div>
+      <div class="section-title">4 &nbsp; HMI (Human Machine Interface)</div>
       <div class="row">
         <div class="field">
-          <label>HMI or Industrial PC Connected?</label>
+          <label>HMI Present?</label>
           <div class="check-row ynu" style="margin-top:6px;">
             <div class="check-item"><input type="radio" name="hmi" id="h1"><label for="h1">Yes</label></div>
             <div class="check-item"><input type="radio" name="hmi" id="h2"><label for="h2">No</label></div>
+            <div class="check-item"><input type="radio" name="hmi" id="h3"><label for="h3">Unknown</label></div>
+          </div>
+        </div>
+        <div class="field"><label>HMI Software Name</label><input type="text"></div>
+      </div>
+      <div class="row"><div class="field"><label>Details</label><textarea></textarea></div></div>
+    </div>
+
+    <!-- 4B - COMPUTER SECTION -->
+    <div class="section">
+      <div class="section-title">4B &nbsp; Industrial PC / Computer</div>
+      <div class="row">
+        <div class="field">
+          <label>Industrial PC Connected?</label>
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="pc" id="pc1"><label for="pc1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="pc" id="pc2"><label for="pc2">No</label></div>
+            <div class="check-item"><input type="radio" name="pc" id="pc3"><label for="pc3">Unknown</label></div>
           </div>
         </div>
         <div class="field">
@@ -451,8 +499,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="field"><label>HMI / Software Name</label><input type="text"></div>
-        <div class="field narrow"><label>Operating System</label><input type="text"></div>
+        <div class="field"><label>Operating System</label><input type="text"></div>
       </div>
       <div class="row">
         <div class="field">
@@ -477,7 +524,8 @@
           <div class="check-row" style="margin-top:2px;">
             <div class="check-item"><input type="checkbox" id="dl1"><label for="dl1">Screen Only</label></div>
             <div class="check-item"><input type="checkbox" id="dl2"><label for="dl2">PLC</label></div>
-            <div class="check-item"><input type="checkbox" id="dl3"><label for="dl3">HMI / Local PC</label></div>
+            <div class="check-item"><input type="checkbox" id="dl3"><label for="dl3">HMI</label></div>
+            <div class="check-item"><input type="checkbox" id="dl3b"><label for="dl3b">Local PC</label></div>
             <div class="check-item"><input type="checkbox" id="dl4"><label for="dl4">SCADA / MES</label></div>
             <div class="check-item"><input type="checkbox" id="dl5"><label for="dl5">Logbook</label></div>
             <div class="check-item"><input type="checkbox" id="dl6"><label for="dl6">Excel Files</label></div>
@@ -507,7 +555,7 @@
       <div class="row"><div class="field"><label>Observations</label><textarea></textarea></div></div>
     </div>
 
-    <!-- 6 -->
+    <!-- 6 - WITH WIFI AND FIREWALL -->
     <div class="section">
       <div class="section-title">6 &nbsp; Network &amp; IT</div>
       <div class="row">
@@ -527,6 +575,8 @@
             <div class="check-item"><input type="radio" name="es" id="es3"><label for="es3">Unknown</label></div>
           </div>
         </div>
+      </div>
+      <div class="row">
         <div class="field">
           <label>Internet in Area?</label>
           <div class="check-row ynu" style="margin-top:6px;">
@@ -700,7 +750,7 @@
           <div class="ex-label">Example</div>
           Customer: Tata Steel Ltd &nbsp;&nbsp; Plant: Jamshedpur Unit 3<br>
           Contact: Rajesh Mehta — Maintenance Manager<br>
-          Phone: 0657-XXX-XXXX &nbsp; Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6311020906100b4d0e23170217024d000c0e">[email&#160;protected]</a>
+          Phone: 0657-XXX-XXXX &nbsp; Email: r.mehta@tatasteel.com
         </div>
       </div>
     </div>
@@ -758,8 +808,9 @@
         <table class="g-table2">
           <tr><td class="g-label">Ethernet (RJ45)</td><td class="g-desc2">Looks like a wide USB plug — 8 pins inside a rectangular clip.</td></tr>
           <tr><td class="g-label">M12</td><td class="g-desc2">Round industrial connector, common on machines exposed to dust or moisture.</td></tr>
-          <tr><td class="g-label">RS-485 / RS-232</td><td class="g-desc2">Small 9-pin or 5-pin serial connectors — older style, sometimes labelled "COM".</td></tr>
+          <tr><td class="g-label">RS-485 / RS-422 / RS-232</td><td class="g-desc2">Small 9-pin or 5-pin serial connectors — older style, sometimes labelled "COM".</td></tr>
           <tr><td class="g-label">USB (Service)</td><td class="g-desc2">Standard USB-A port. Often behind a small flap labelled "Service" or "Maintenance".</td></tr>
+          <tr><td class="g-label">Type A / Type C</td><td class="g-desc2">USB connector types - Type A is the standard rectangular USB, Type C is the newer reversible connector.</td></tr>
         </table>
         <p style="margin-top:8px;">If a cable is already plugged into a port, mark <strong>Ports Already in Use: Yes</strong> and write what it connects to.</p>
       </div>
@@ -767,14 +818,14 @@
   </div>
 
   <div class="section">
-    <div class="section-title">Section 4 — HMI / Computer</div>
+    <div class="section-title">Section 4 — HMI &amp; Computer</div>
     <div class="guide-row">
       <div class="guide-num">4</div>
       <div class="guide-body">
         <h3>What is an HMI?</h3>
-        <p>An <strong>HMI</strong> (Human Machine Interface) is the screen operators use to monitor or control the machine. It could be a touchscreen panel mounted next to the machine, or a desktop PC running industrial software.</p>
-        <p>Note the software name shown on the title bar or startup screen. Check if the operating system is visible — usually shown at the bottom taskbar (e.g. Windows 10, Linux).</p>
-        <div class="tip"><strong>Tip:</strong> For <strong>Data Export Method</strong>, ask the operator how they normally save or share data. Common answers: "we copy to a USB stick", "it goes to the server automatically", "we print a daily report".</div>
+        <p>An <strong>HMI</strong> (Human Machine Interface) is the touchscreen or display panel operators use to monitor the machine. It shows real-time data but typically does NOT store historical data.</p>
+        <p>An <strong>Industrial PC</strong> is different - it's an actual computer that can store and process data. It usually runs Windows or Linux and has storage capabilities.</p>
+        <div class="tip"><strong>Tip:</strong> HMIs display data, computers store it. Fill both sections if the machine has both.</div>
       </div>
     </div>
   </div>
@@ -786,6 +837,7 @@
       <div class="guide-body">
         <h3>Where does data live?</h3>
         <p>This is about where the machine's readings actually get <strong>stored</strong> — not just displayed. Tick more than one box if applicable. A machine might show temperature on screen but also log it inside the PLC.</p>
+        <p>Note that <strong>HMI</strong> and <strong>Local PC</strong> are now separate options since only computers typically store data long-term.</p>
         <p>For <strong>5.2 Data Types Visible</strong>, list every kind of reading you can see anywhere at the machine.</p>
         <div class="example">
           <div class="ex-label">Example — Data Types</div>
@@ -803,7 +855,8 @@
       <div class="guide-body">
         <h3>Network basics</h3>
         <p><strong>Factory Network</strong> means the machine or its panel is connected via a cable to other systems in the plant — typically through an Ethernet switch (a small box with multiple ports, often mounted on a wall or in a rack).</p>
-        <p><strong>Internet in Area</strong> means whether there is Wi-Fi or a working internet connection physically near the machine — not necessarily connected to it directly.</p>
+        <p><strong>WiFi Available</strong> means there is a wireless network that could potentially be used for connectivity in the area.</p>
+        <p><strong>Firewall Present</strong> indicates network security measures that may affect data transmission.</p>
         <p><strong>IT Approval</strong> — some factories require formal sign-off before connecting any new device to their network. Ask the plant manager or IT contact.</p>
         <div class="tip"><strong>Tip:</strong> Look for an Ethernet cable running from the machine or panel to a wall or ceiling. If you see one, an Ethernet switch is likely nearby — follow the cable.</div>
       </div>
@@ -919,7 +972,7 @@
   <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 3 of 3</div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function generatePDF() {
   // Get form
   const form = document.querySelector('form');
@@ -941,7 +994,7 @@ function generatePDF() {
                          anyRadioChecked;
   
   if (!hasMinimumData) {
-    alert('Please fill at least the Machine Name, Company Name, or OEM field before generating PDF');
+    alert('Please fill at least the Machine Name, Company Name, OEM field, etc. before generating PDF');
     return;
   }
   
@@ -988,6 +1041,31 @@ function generatePDF() {
   .filled-form input[type="radio"]:checked + label {
     font-weight: 700 !important;
     text-decoration: underline !important;
+  }
+  
+  /* Prevent stacking of options in PDF */
+  .check-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px 18px !important;
+  }
+  
+  .check-row .check-item {
+    display: inline-flex !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .readiness-row {
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .readiness-card {
+    flex: 1 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 }
 </style>
