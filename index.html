@@ -382,14 +382,6 @@
             <div class="check-item"><input type="radio" name="plc" id="plc3"><label for="plc3">Unknown</label></div>
           </div>
         </div>
-        <div class="field">
-          <label>Spare I/O Available?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="sio" id="sio1"><label for="sio1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="sio" id="sio2"><label for="sio2">No</label></div>
-            <div class="check-item"><input type="radio" name="sio" id="sio3"><label for="sio3">Unknown</label></div>
-          </div>
-        </div>
       </div>
       <div class="row">
         <div class="field">
@@ -409,21 +401,6 @@
         </div>
       </div>
       <div class="row"><div class="field"><label>PLC Model</label><input type="text"></div></div>
-      <div class="row">
-        <div class="field">
-          <label>Visible PLC Communication</label>
-          <div class="check-row" style="margin-top:6px;">
-            <div class="check-item"><input type="checkbox" id="c1"><label for="c1">Ethernet</label></div>
-            <div class="check-item"><input type="checkbox" id="c2"><label for="c2">RS-485</label></div>
-            <div class="check-item"><input type="checkbox" id="c2a"><label for="c2a">RS-422</label></div>
-            <div class="check-item"><input type="checkbox" id="c3"><label for="c3">RS-232</label></div>
-            <div class="check-item"><input type="checkbox" id="c4"><label for="c4">PROFINET / PROFIBUS</label></div>
-            <div class="check-item"><input type="checkbox" id="c7"><label for="c7">Type A</label></div>
-            <div class="check-item"><input type="checkbox" id="c6"><label for="c6">Type C</label></div>
-            <div class="check-item"><input type="checkbox" id="c5"><label for="c5">Not Visible</label></div>
-          </div>
-        </div>
-      </div>
       <div class="row"><div class="field"><label>Notes</label><textarea></textarea></div></div>
 
       <div class="sub-title">3.2 &nbsp; Visible Ports (Only What You See)</div>
@@ -433,34 +410,25 @@
             <div class="check-item"><input type="checkbox" id="vp1"><label for="vp1">Ethernet (RJ45)</label></div>
             <div class="check-item"><input type="checkbox" id="vp2"><label for="vp2">M12 Ethernet</label></div>
             <div class="check-item"><input type="checkbox" id="vp3"><label for="vp3">RS-485</label></div>
+            <div class="check-item"><input type="checkbox" id="vp3b"><label for="vp3b">RS-422</label></div>
             <div class="check-item"><input type="checkbox" id="vp4"><label for="vp4">RS-232</label></div>
             <div class="check-item"><input type="checkbox" id="vp5"><label for="vp5">Analog I/O</label></div>
-            <div class="check-item"><input type="checkbox" id="vp6"><label for="vp6">PROFIBUS</label></div>
-            <div class="check-item"><input type="checkbox" id="vp7"><label for="vp7">PROFINET</label></div>
-            <div class="check-item"><input type="checkbox" id="vp8"><label for="vp8">USB (Service)</label></div>
-            <div class="check-item"><input type="checkbox" id="vp9"><label for="vp9">Wi-Fi / 4G</label></div>
-            <div class="check-item"><input type="checkbox" id="vp10"><label for="vp10">None Visible</label></div>
+            <div class="check-item"><input type="checkbox" id="vp7"><label for="vp7">Type A</label></div>
+            <div class="check-item"><input type="checkbox" id="vp8"><label for="vp8">Type C</label></div>
+            <div class="check-item"><input type="checkbox" id="vp9"><label for="vp9">USB (Service)</label></div>
+            <div class="check-item"><input type="checkbox" id="vp10"><label for="vp10">Wi-Fi / 4G</label></div>
+            <div class="check-item"><input type="checkbox" id="vp11"><label for="vp11">None Visible</label></div>
           </div>
           <div class="other-inline">
-            <div class="check-item"><input type="checkbox" id="vp11"><label for="vp11">Other:</label></div>
+            <div class="check-item"><input type="checkbox" id="vp12"><label for="vp12">Other:</label></div>
             <input type="text">
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="field">
-          <label>Ports Already in Use?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="piu" id="piu1"><label for="piu1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="piu" id="piu2"><label for="piu2">No</label></div>
-            <div class="check-item"><input type="radio" name="piu" id="piu3"><label for="piu3">Unknown</label></div>
-          </div>
-        </div>
-        <div class="field"><label>Connected To</label><input type="text"></div>
-      </div>
+      <div class="row"><div class="field"><label>Connected To</label><input type="text"></div></div>
     </div>
 
-    <!-- 4 - SPLIT INTO HMI AND COMPUTER -->
+    <!-- 4 - HMI -->
     <div class="section">
       <div class="section-title">4 &nbsp; HMI (Human Machine Interface)</div>
       <div class="row">
@@ -473,6 +441,17 @@
           </div>
         </div>
         <div class="field"><label>HMI Software Name</label><input type="text"></div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Data Export Method</label>
+          <div class="check-row" style="margin-top:6px;">
+            <div class="check-item"><input type="checkbox" id="ex1"><label for="ex1">USB</label></div>
+            <div class="check-item"><input type="checkbox" id="ex2"><label for="ex2">Network</label></div>
+            <div class="check-item"><input type="checkbox" id="ex3"><label for="ex3">Printed Reports</label></div>
+            <div class="check-item"><input type="checkbox" id="ex4"><label for="ex4">Unknown</label></div>
+          </div>
+        </div>
       </div>
       <div class="row"><div class="field"><label>Details</label><textarea></textarea></div></div>
     </div>
@@ -500,17 +479,6 @@
       </div>
       <div class="row">
         <div class="field"><label>Operating System</label><input type="text"></div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label>Data Export Method</label>
-          <div class="check-row" style="margin-top:6px;">
-            <div class="check-item"><input type="checkbox" id="ex1"><label for="ex1">USB</label></div>
-            <div class="check-item"><input type="checkbox" id="ex2"><label for="ex2">Network</label></div>
-            <div class="check-item"><input type="checkbox" id="ex3"><label for="ex3">Printed Reports</label></div>
-            <div class="check-item"><input type="checkbox" id="ex4"><label for="ex4">Unknown</label></div>
-          </div>
-        </div>
       </div>
       <div class="row"><div class="field"><label>Details</label><textarea></textarea></div></div>
     </div>
@@ -634,9 +602,10 @@
         <div class="field">
           <div class="check-row" style="margin-top:2px;">
             <div class="check-item"><input type="checkbox" id="im1"><label for="im1">Direct Machine Connection</label></div>
-            <div class="check-item"><input type="checkbox" id="im2"><label for="im2">AI Camera Reading</label></div>
-            <div class="check-item"><input type="checkbox" id="im3"><label for="im3">Hybrid</label></div>
-            <div class="check-item"><input type="checkbox" id="im4"><label for="im4">Not Sure</label></div>
+            <div class="check-item"><input type="checkbox" id="im2"><label for="im2">HMI</label></div>
+            <div class="check-item"><input type="checkbox" id="im3"><label for="im3">AI Camera Reading</label></div>
+            <div class="check-item"><input type="checkbox" id="im4"><label for="im4">Hybrid</label></div>
+            <div class="check-item"><input type="checkbox" id="im5"><label for="im5">Not Sure</label></div>
           </div>
         </div>
       </div>
@@ -797,7 +766,6 @@
         <p>A <strong>dedicated electrical panel</strong> is a separate box or cabinet that houses only this machine's wiring and controllers — usually grey or steel-coloured, sometimes with a tag number. If the panel door is locked, mark <strong>Panel Accessible: No</strong> and do not force it open.</p>
         <p>A <strong>PLC</strong> (Programmable Logic Controller) is the brain of the machine. It looks like a small rectangular module mounted on a DIN rail inside the panel. The brand name is printed on the front face.</p>
         <div class="tip"><strong>Tip:</strong> If you can see a PLC but cannot read the brand or model, take a close-up photo. The label is usually on the top or front of the module.</div>
-        <p><strong>Spare I/O</strong> means unused input/output slots on the PLC — small empty gaps next to the wired connectors. Only tick "Yes" if you can clearly see empty slots.</p>
       </div>
     </div>
     <div class="guide-row">
@@ -812,7 +780,7 @@
           <tr><td class="g-label">USB (Service)</td><td class="g-desc2">Standard USB-A port. Often behind a small flap labelled "Service" or "Maintenance".</td></tr>
           <tr><td class="g-label">Type A / Type C</td><td class="g-desc2">USB connector types - Type A is the standard rectangular USB, Type C is the newer reversible connector.</td></tr>
         </table>
-        <p style="margin-top:8px;">If a cable is already plugged into a port, mark <strong>Ports Already in Use: Yes</strong> and write what it connects to.</p>
+        <p style="margin-top:8px;">If a cable is already plugged into a port, write what it connects to in the "Connected To" field.</p>
       </div>
     </div>
   </div>
@@ -823,9 +791,9 @@
       <div class="guide-num">4</div>
       <div class="guide-body">
         <h3>What is an HMI?</h3>
-        <p>An <strong>HMI</strong> (Human Machine Interface) is the touchscreen or display panel operators use to monitor the machine. It shows real-time data but typically does NOT store historical data.</p>
+        <p>An <strong>HMI</strong> (Human Machine Interface) is the touchscreen or display panel operators use to monitor the machine. Modern HMIs may have data export capabilities via USB, network, or print functions.</p>
         <p>An <strong>Industrial PC</strong> is different - it's an actual computer that can store and process data. It usually runs Windows or Linux and has storage capabilities.</p>
-        <div class="tip"><strong>Tip:</strong> HMIs display data, computers store it. Fill both sections if the machine has both.</div>
+        <div class="tip"><strong>Tip:</strong> HMIs display data and may allow exports, computers store it long-term. Fill both sections if the machine has both.</div>
       </div>
     </div>
   </div>
@@ -973,7 +941,7 @@
   <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 3 of 3</div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function generatePDF() {
   // Get form
   const form = document.querySelector('form');
