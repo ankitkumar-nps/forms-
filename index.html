@@ -425,7 +425,18 @@
           </div>
         </div>
       </div>
-      <div class="row"><div class="field"><label>Connected To</label><input type="text"></div></div>
+      <div class="row"><div class="field"><label>Connected To (If Yes)</label><input type="text"></div></div>
+
+      <div class="sub-title">3.3 &nbsp; Industrial Network Available?</div>
+      <div class="row">
+        <div class="field">
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="indnet" id="in1"><label for="in1">PROFINET</label></div>
+            <div class="check-item"><input type="radio" name="indnet" id="in2"><label for="in2">PROFIBUS</label></div>
+            <div class="check-item"><input type="radio" name="indnet" id="in3"><label for="in3">No</label></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- 4 - HMI -->
@@ -523,10 +534,18 @@
       <div class="row"><div class="field"><label>Observations</label><textarea></textarea></div></div>
     </div>
 
-    <!-- 6 - WITH WIFI AND FIREWALL -->
+    <!-- 6 -->
     <div class="section">
       <div class="section-title">6 &nbsp; Network &amp; IT</div>
       <div class="row">
+        <div class="field">
+          <label>Internet Available Near Hardware?</label>
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="ia" id="ia1"><label for="ia1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="ia" id="ia2"><label for="ia2">No</label></div>
+            <div class="check-item"><input type="radio" name="ia" id="ia3"><label for="ia3">Unknown</label></div>
+          </div>
+        </div>
         <div class="field">
           <label>Connected to Factory Network?</label>
           <div class="check-row ynu" style="margin-top:6px;">
@@ -535,8 +554,18 @@
             <div class="check-item"><input type="radio" name="fn" id="fn3"><label for="fn3">Unknown</label></div>
           </div>
         </div>
+      </div>
+      <div class="row">
         <div class="field">
-          <label>Ethernet Switch Nearby?</label>
+          <label>WiFi / LAN Available?</label>
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="wifi" id="wifi1"><label for="wifi1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="wifi" id="wifi2"><label for="wifi2">No</label></div>
+            <div class="check-item"><input type="radio" name="wifi" id="wifi3"><label for="wifi3">Unknown</label></div>
+          </div>
+        </div>
+        <div class="field">
+          <label>LAN Nearby?</label>
           <div class="check-row ynu" style="margin-top:6px;">
             <div class="check-item"><input type="radio" name="es" id="es1"><label for="es1">Yes</label></div>
             <div class="check-item"><input type="radio" name="es" id="es2"><label for="es2">No</label></div>
@@ -546,11 +575,11 @@
       </div>
       <div class="row">
         <div class="field">
-          <label>Internet in Area?</label>
+          <label>Firewall Present?</label>
           <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="ia" id="ia1"><label for="ia1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="ia" id="ia2"><label for="ia2">No</label></div>
-            <div class="check-item"><input type="radio" name="ia" id="ia3"><label for="ia3">Unknown</label></div>
+            <div class="check-item"><input type="radio" name="fw" id="fw1"><label for="fw1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="fw" id="fw2"><label for="fw2">No</label></div>
+            <div class="check-item"><input type="radio" name="fw" id="fw3"><label for="fw3">Unknown</label></div>
           </div>
         </div>
         <div class="field">
@@ -559,24 +588,6 @@
             <div class="check-item"><input type="radio" name="it" id="it1"><label for="it1">Yes</label></div>
             <div class="check-item"><input type="radio" name="it" id="it2"><label for="it2">No</label></div>
             <div class="check-item"><input type="radio" name="it" id="it3"><label for="it3">Unknown</label></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label>WiFi Available?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="wifi" id="wifi1"><label for="wifi1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="wifi" id="wifi2"><label for="wifi2">No</label></div>
-            <div class="check-item"><input type="radio" name="wifi" id="wifi3"><label for="wifi3">Unknown</label></div>
-          </div>
-        </div>
-        <div class="field">
-          <label>Firewall Present?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="fw" id="fw1"><label for="fw1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="fw" id="fw2"><label for="fw2">No</label></div>
-            <div class="check-item"><input type="radio" name="fw" id="fw3"><label for="fw3">Unknown</label></div>
           </div>
         </div>
       </div>
@@ -780,7 +791,20 @@
           <tr><td class="g-label">USB (Service)</td><td class="g-desc2">Standard USB-A port. Often behind a small flap labelled "Service" or "Maintenance".</td></tr>
           <tr><td class="g-label">Type A / Type C</td><td class="g-desc2">USB connector types - Type A is the standard rectangular USB, Type C is the newer reversible connector.</td></tr>
         </table>
-        <p style="margin-top:8px;">If a cable is already plugged into a port, write what it connects to in the "Connected To" field.</p>
+        <p style="margin-top:8px;">If a cable is already plugged into a port, write what it connects to in the "Connected To (If Yes)" field.</p>
+      </div>
+    </div>
+    <div class="guide-row">
+      <div class="guide-num" style="font-size:11px;">3.3</div>
+      <div class="guide-body">
+        <h3>Industrial Network Available?</h3>
+        <p>Some industrial machines use specialized networking protocols. Here are the two most common:</p>
+        <table class="g-table2">
+          <tr><td class="g-label">PROFINET</td><td class="g-desc2">Modern industrial Ethernet protocol by Siemens. Uses standard Ethernet cables but runs special industrial communication. Common in automated manufacturing.</td></tr>
+          <tr><td class="g-label">PROFIBUS</td><td class="g-desc2">Older fieldbus protocol using RS-485 cables. Purple cables are typical. Still widely used in process industries and older installations.</td></tr>
+        </table>
+        <p style="margin-top:8px;">Look for labels on cables or ports that say "PROFINET" or "PROFIBUS". If you don't see either, select "No".</p>
+        <div class="tip"><strong>Tip:</strong> PROFINET cables look like regular Ethernet but may be green or have industrial-grade connectors. PROFIBUS cables are often purple or have a distinctive 9-pin D-sub connector.</div>
       </div>
     </div>
   </div>
@@ -817,16 +841,18 @@
   </div>
 
   <div class="section">
-    <div class="section-title">Section 6 — Network &amp; IT</div>
+    <div class="section-title">Section 6 — Network near Hardware</div>
     <div class="guide-row">
       <div class="guide-num">6</div>
       <div class="guide-body">
-        <h3>Network basics</h3>
-        <p><strong>Factory Network</strong> means the machine or its panel is connected via a cable to other systems in the plant — typically through an Ethernet switch (a small box with multiple ports, often mounted on a wall or in a rack).</p>
-        <p><strong>WiFi Available</strong> means there is a wireless network that could potentially be used for connectivity in the area.</p>
-        <p><strong>Firewall Present</strong> indicates network security measures that may affect data transmission.</p>
-        <p><strong>IT Approval</strong> — some factories require formal sign-off before connecting any new device to their network. Ask the plant manager or IT contact.</p>
-        <div class="tip"><strong>Tip:</strong> Look for an Ethernet cable running from the machine or panel to a wall or ceiling. If you see one, an Ethernet switch is likely nearby — follow the cable.</div>
+        <h3>Network connectivity check</h3>
+        <p><strong>Internet Available Near Hardware</strong> — Check if there is active internet connectivity in the immediate area around the machine. This could be via WiFi signal, nearby router, or LAN access. Test with a phone or laptop if possible.</p>
+        <p><strong>Connected to Factory Network</strong> — Is the machine or its control panel already wired into the plant's internal network? Look for Ethernet cables running from the panel to switches or network infrastructure.</p>
+        <p><strong>WiFi / LAN Available</strong> — Are there wireless or wired local network options that could be used for connectivity? This includes both WiFi signals and physical LAN ports that are accessible.</p>
+        <p><strong>LAN Nearby</strong> — Is there an Ethernet switch, network cabinet, or LAN infrastructure within reasonable distance (within 10-15 meters)? Look for wall-mounted switch boxes or network racks.</p>
+        <p><strong>Firewall Present</strong> — Are there network security measures or firewalls that control what can connect to the network? Ask IT or plant management if unsure.</p>
+        <p><strong>IT Approval Needed</strong> — Some factories require formal sign-off before connecting any new device to their network. Ask the plant manager or IT contact.</p>
+        <div class="tip"><strong>Tip:</strong> The goal is to understand what internet/network options exist near the machine. Even if the machine isn't currently connected, knowing what's available helps plan the integration.</div>
       </div>
     </div>
   </div>
