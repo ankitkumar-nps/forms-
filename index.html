@@ -305,7 +305,7 @@
         <div class="field"><label>Primary Function / Output</label><input type="text" name="function"></div>
       </div>
       <div class="row">
-        <div class="field narrow"><label>Last Calibrated (Date)</label><input type="text" name="last_calibrated"></div>
+        <div class="field narrow"><label>Last Calibrated (DD / MM / YYYY)</label><input type="text" name="last_calibrated"></div>
         <div class="field"><label>Notes on Calibration</label><input type="text" name="calibration_notes"></div>
       </div>
       <div class="row">
@@ -417,7 +417,7 @@
           </div>
         </div>
       </div>
-      <div class="row"><div class="field"><label>If Yes then Connected To? (Describe what ports are currently connected?)</label><input type="text" name="connected_to"></div></div>
+      <div class="row"><div class="field"><label>If Yes, Connected To (Describe what ports are connected to)</label><input type="text" name="connected_to"></div></div>
       
       <div class="sub-title">3.4 &nbsp; Industrial Network Available?</div>
       <div class="row">
@@ -524,45 +524,63 @@
     </div>
     <!-- 6 -->
     <div class="section">
-      <div class="section-title">6 &nbsp; Hardware Internet Connection Details</div>
+      <div class="section-title">6 &nbsp; Internet Availability near Hardware</div>
       <div class="row">
         <div class="field">
-          <label>Internet(WiFi / LAN) Available Near Hardware?</label>
+          <label>Internet Available near Hardware?</label>
           <div class="check-row ynu" style="margin-top:6px;">
             <div class="check-item"><input type="radio" name="ia" id="ia1"><label for="ia1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ia" id="ia2"><label for="ia2">No</label></div>
-            <div class="check-item"><input type="radio" name="ia" id="ia3"><label for="ia3">Unknown</label></div>
-          </div>
-        </div>
-        <div class="field">
-          <label>Connected to Factory Network?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="fn" id="fn1"><label for="fn1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="fn" id="fn2"><label for="fn2">No</label></div>
-            <div class="check-item"><input type="radio" name="fn" id="fn3"><label for="fn3">Unknown</label></div>
           </div>
         </div>
       </div>
       <div class="row">
-     
-         
-    
         <div class="field">
-          <label>Firewall Present?</label>
+          <label>If Yes</label>
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="conn_type" id="ct1"><label for="ct1">LAN</label></div>
+            <div class="check-item"><input type="radio" name="conn_type" id="ct2"><label for="ct2">WiFi</label></div>
+            <div class="check-item"><input type="radio" name="conn_type" id="ct3"><label for="ct3">Both</label></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Is Hardware already connected to a network?</label>
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="hw_network" id="hwn1"><label for="hwn1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="hw_network" id="hwn2"><label for="hwn2">No</label></div>
+            <div class="check-item"><input type="radio" name="hw_network" id="hwn3"><label for="hwn3">Maybe</label></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Is Hardware has Internet?</label>
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="hw_internet" id="hwi1"><label for="hwi1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="hw_internet" id="hwi2"><label for="hwi2">No</label></div>
+            <div class="check-item"><input type="radio" name="hw_internet" id="hwi3"><label for="hwi3">Maybe</label></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Firewall present?</label>
           <div class="check-row ynu" style="margin-top:6px;">
             <div class="check-item"><input type="radio" name="fw" id="fw1"><label for="fw1">Yes</label></div>
             <div class="check-item"><input type="radio" name="fw" id="fw2"><label for="fw2">No</label></div>
-            <div class="check-item"><input type="radio" name="fw" id="fw3"><label for="fw3">Unknown</label></div>
+            <div class="check-item"><input type="radio" name="fw" id="fw3"><label for="fw3">Maybe</label></div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="field">
-          <label>IT Approval Needed?</label>
+          <label>IT approval needed?</label>
           <div class="check-row ynu" style="margin-top:6px;">
             <div class="check-item"><input type="radio" name="it" id="it1"><label for="it1">Yes</label></div>
             <div class="check-item"><input type="radio" name="it" id="it2"><label for="it2">No</label></div>
-            <div class="check-item"><input type="radio" name="it" id="it3"><label for="it3">Unknown</label></div>
+            <div class="check-item"><input type="radio" name="it" id="it3"><label for="it3">Maybe</label></div>
           </div>
         </div>
       </div>
@@ -694,7 +712,7 @@
           <div class="ex-label">Example</div>
           Customer: Tata Steel Ltd &nbsp;&nbsp; Plant: Jamshedpur Unit 3<br>
           Contact: Rajesh Mehta — Maintenance Manager<br>
-          Phone: 0657-XXX-XXXX &nbsp; Email: r.mehta@tatasteel.com
+          Phone: 0657-XXX-XXXX &nbsp; Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a5804474f425e4b6a5e4b5e4b595e4f4f4604494547">[email&#160;protected]</a>
         </div>
       </div>
     </div>
@@ -805,16 +823,17 @@
     </div>
   </div>
   <div class="section">
-    <div class="section-title">Section 6 — Hardware Internet Connection Details</div>
+    <div class="section-title">Section 6 — Internet Availability near Hardware</div>
     <div class="guide-row">
       <div class="guide-num">6</div>
       <div class="guide-body">
         <h3>Network connectivity check</h3>
-        <p><strong>Internet() Available Near Hardware</strong> — Check if there is active internet connectivity in the immediate area around the machine. This could be via WiFi signal, nearby router, or LAN access. Test with a phone or laptop if possible.</p>
-        <p><strong>Connected to Factory Network</strong> — Is the machine or its control panel already wired into the plant's internal network? Look for Ethernet cables running from the panel to switches or network infrastructure.</p>
-        <p><strong>WiFi / LAN Available</strong> — Are there wireless or wired local network options that could be used for connectivity? This includes both WiFi signals and physical LAN ports that are accessible.</p>
-        <p><strong>Firewall Present</strong> — Are there network security measures or firewalls that control what can connect to the network? Ask IT or plant management if unsure.</p>
-        <p><strong>IT Approval Needed</strong> — Some factories require formal sign-off before connecting any new device to their network. Ask the plant manager or IT contact.</p>
+        <p><strong>Internet Available near Hardware</strong> — Check if there is active internet connectivity in the immediate area around the machine. This could be via WiFi signal, nearby router, or LAN access. Test with a phone or laptop if possible.</p>
+        <p><strong>If Yes</strong> — Specify whether the internet is available through LAN (wired Ethernet), WiFi (wireless), or Both.</p>
+        <p><strong>Is Hardware already connected to a network</strong> — Is the machine or its control panel already wired into any network? Look for Ethernet cables running from the panel to switches or network infrastructure.</p>
+        <p><strong>Is Hardware has Internet</strong> — Does the hardware itself have active internet connectivity right now? This is different from having network access nearby.</p>
+        <p><strong>Firewall present</strong> — Are there network security measures or firewalls that control what can connect to the network? Ask IT or plant management if unsure.</p>
+        <p><strong>IT approval needed</strong> — Some factories require formal sign-off before connecting any new device to their network. Ask the plant manager or IT contact.</p>
         <div class="tip"><strong>Tip:</strong> The goal is to understand what internet/network options exist near the machine. Even if the machine isn't currently connected, knowing what's available helps plan the integration.</div>
       </div>
     </div>
@@ -920,7 +939,7 @@
   </div>
   <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 3 of 3</div>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function generatePDF() {
   // Get form
   const form = document.querySelector('form');
@@ -1004,17 +1023,4 @@ function generatePDF() {
   }
   
   .readiness-row {
-    display: flex !important;
-    gap: 8px !important;
-    flex-wrap: nowrap !important;
-  }
-  
-  .readiness-card {
-    flex: 1 !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-}
-</style>
-</body>
-</html>
+    display: fle
