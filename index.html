@@ -31,47 +31,50 @@
     border-bottom: 3px solid #000;
     padding-bottom: 14px;
     margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   .header h1 { font-size:20px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; }
-  .header-sub { font-size:11px; color:#555; margin-top:3px; }
   .header-instructions {
-    border-top: 1px solid #000;
-    margin-top: 10px; padding-top: 8px;
-    display: flex; gap: 24px;
-    font-size: 11px; color: #333;
+    border: 1px solid #000;
+    padding: 6px 10px;
+    font-size: 9px;
+    line-height: 1.4;
+    max-width: 280px;
   }
-  .header-instructions span { display:flex; align-items:center; gap:5px; }
-  .header-instructions .tick { font-weight:700; }
+  .header-instructions .tick { font-weight:700; margin-right: 4px; }
   /* ─── SECTION ─── */
-  .section { margin-top: 18px; }
+  .section { margin-top: 14px; }
   .section-title {
     font-size:12px; font-weight:700; text-transform:uppercase;
     letter-spacing:0.6px; background:#000; color:#fff;
-    padding:4px 10px; margin-bottom:12px;
+    padding:4px 10px; margin-bottom:10px;
   }
   .sub-title {
     font-size:11px; font-weight:600; text-transform:uppercase;
     letter-spacing:0.4px; border-bottom:1px solid #000;
-    padding-bottom:2px; margin:14px 0 10px;
+    padding-bottom:2px; margin:12px 0 8px;
   }
   /* ─── ROWS & FIELDS ─── */
-  .row { display:flex; gap:16px; margin-bottom:12px; }
+  .row { display:flex; gap:12px; margin-bottom:10px; }
   .row .field { flex:1; }
-  .row .field.narrow { flex:0 0 180px; }
+  .row .field.narrow { flex:0 0 140px; }
+  .row .field.medium { flex:0 0 200px; }
   .field { display:flex; flex-direction:column; }
   .field label {
-    font-size:10px; font-weight:600; text-transform:uppercase;
-    letter-spacing:0.4px; color:#333; margin-bottom:4px;
+    font-size:9px; font-weight:600; text-transform:uppercase;
+    letter-spacing:0.4px; color:#333; margin-bottom:3px;
   }
   .field input[type="text"], .field textarea {
     border:none; border-bottom:1px solid #000;
-    font-family:inherit; font-size:12px;
-    padding:4px 2px; outline:none;
+    font-family:inherit; font-size:11px;
+    padding:3px 2px; outline:none;
     background:transparent; width:100%; color:#000;
   }
   .field textarea {
-    border:1px solid #000; padding:6px 8px;
-    resize:vertical; min-height:48px; font-size:11px;
+    border:1px solid #000; padding:5px 6px;
+    resize:vertical; min-height:40px; font-size:10px;
   }
   .field input[type="text"]:focus, .field textarea:focus {
     border-color:#2563eb; background:#fafafa;
@@ -79,179 +82,158 @@
   /* ─── CHECKBOXES / RADIOS ─── */
   .check-row {
     display:flex; flex-wrap:wrap;
-    gap:6px 18px; align-items:center; margin-bottom:10px;
+    gap:4px 14px; align-items:center; margin-bottom:8px;
   }
-  .check-row .check-item { display:flex; align-items:center; gap:5px; font-size:11px; }
-  .check-row .check-item input { width:13px; height:13px; accent-color:#2563eb; cursor:pointer; }
+  .check-row .check-item { display:flex; align-items:center; gap:4px; font-size:10px; }
+  .check-row .check-item input { width:12px; height:12px; accent-color:#2563eb; cursor:pointer; }
   .check-row .check-item label {
     cursor:pointer; text-transform:none;
     font-weight:400; letter-spacing:0; margin:0;
   }
-  .other-inline { display:flex; align-items:center; gap:6px; margin-top:6px; }
-  .other-inline .check-item { display:flex; align-items:center; gap:10px; }
-  .other-inline label { font-size:11px; font-weight:600; white-space:nowrap; }
+  .other-inline { display:flex; align-items:center; gap:6px; margin-top:4px; }
+  .other-inline .check-item { display:flex; align-items:center; gap:8px; }
+  .other-inline label { font-size:10px; font-weight:600; white-space:nowrap; }
   .other-inline input[type="text"] {
     flex:1; border:none; border-bottom:1px solid #000;
-    font-family:inherit; font-size:11px; padding:2px 0; outline:none;
+    font-family:inherit; font-size:10px; padding:2px 0; outline:none;
   }
-  .ynu { display:flex; gap:18px; }
+  .ynu { display:flex; gap:14px; }
   /* ─── READINESS CARDS ─── */
-  .readiness-row { display:flex; gap:8px; margin-top:4px; }
+  .readiness-row { display:flex; gap:6px; margin-top:4px; }
   .readiness-card {
-    flex:1; border:1px solid #000; padding:8px 6px;
+    flex:1; border:1px solid #000; padding:6px 4px;
     text-align:center; cursor:pointer; position:relative;
   }
   .readiness-card input[type="radio"] { position:absolute; opacity:0; width:0; height:0; }
   .readiness-card:has(input:checked) { background:#2563eb; color:#fff; border-color:#2563eb; }
-  .readiness-card .r-num { font-size:15px; font-weight:700; }
-  .readiness-card .r-label { font-size:9px; margin-top:2px; text-transform:uppercase; letter-spacing:0.3px; }
+  .readiness-card .r-num { font-size:14px; font-weight:700; }
+  .readiness-card .r-label { font-size:8px; margin-top:2px; text-transform:uppercase; letter-spacing:0.3px; }
   /* ─── PHOTO GRID ─── */
-  .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
   .photo-box {
-    border:1px solid #000; padding:8px 10px;
-    display:flex; align-items:center; gap:8px;
-    font-size:11px; cursor:pointer;
+    border:1px solid #000; padding:6px 8px;
+    display:flex; align-items:center; gap:6px;
+    font-size:10px; cursor:pointer;
   }
-  .photo-box input { accent-color:#2563eb; width:13px; height:13px; }
+  .photo-box input { accent-color:#2563eb; width:12px; height:12px; }
   .photo-box label { cursor:pointer; margin:0; text-transform:none; font-weight:400; letter-spacing:0; }
   /* ─── SUBMIT ─── */
   .submit-bar {
-    margin-top:24px; border-top:2px solid #000;
-    padding-top:16px; display:flex; justify-content:center; gap:16px;
+    margin-top:20px; border-top:2px solid #000;
+    padding-top:14px; display:flex; justify-content:center; gap:14px;
   }
   .btn-submit {
     background:#2563eb; color:#fff; border:none; font-family:inherit;
-    font-size:12px; font-weight:600; text-transform:uppercase;
-    letter-spacing:1px; padding:10px 36px; cursor:pointer;
+    font-size:11px; font-weight:600; text-transform:uppercase;
+    letter-spacing:1px; padding:9px 32px; cursor:pointer;
   }
   .btn-submit:hover { background:#1d4ed8; }
   .btn-reset {
     background:#fff; color:#000; border:1px solid #000;
-    font-family:inherit; font-size:11px; padding:10px 28px;
+    font-family:inherit; font-size:10px; padding:9px 24px;
     cursor:pointer; text-transform:uppercase; letter-spacing:0.5px;
   }
   .btn-reset:hover { background:#f0f0f0; }
-  /* ═══ GUIDE PAGES ═══ */
-  .guide-header {
-    border-bottom:3px solid #000; padding-bottom:8px; margin-bottom:12px;
-    display:flex; justify-content:space-between; align-items:flex-end;
-  }
-  .guide-header h1 { font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; }
-  .guide-header .guide-badge {
-    font-size:10px; font-weight:700; text-transform:uppercase;
-    letter-spacing:1px; border:1.5px solid #000; padding:3px 8px;
-  }
-  .guide-intro {
-    font-size:11px; color:#444; line-height:1.55;
-    margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #ccc;
-  }
-  .guide-row { display:flex; gap:12px; margin-bottom:10px; align-items:flex-start; }
-  .guide-num {
-    flex:0 0 28px; height:28px; background:#000; color:#fff;
-    font-size:13px; font-weight:700;
-    display:flex; align-items:center; justify-content:center; margin-top:1px;
-  }
-  .guide-body { flex:1; }
-  .guide-body h3 {
-    font-size:11px; font-weight:700; text-transform:uppercase;
-    letter-spacing:0.5px; margin-bottom:3px;
-  }
-  .guide-body p { font-size:10px; color:#333; line-height:1.4; margin-bottom:3px; }
-  .guide-body p:last-child { margin-bottom:0; }
-  .tip {
-    background:#f5f5f5; border-left:3px solid #000;
-    padding:5px 8px; margin-top:4px;
-    font-size:10px; color:#333; line-height:1.4;
-  }
-  .tip strong { font-weight:700; }
-  .example {
-    border:1px solid #ccc; padding:5px 8px; margin-top:4px;
-    font-size:10px; color:#444; line-height:1.45;
-  }
-  .example .ex-label {
-    font-size:9px; font-weight:700; text-transform:uppercase;
-    letter-spacing:0.5px; color:#000; margin-bottom:3px;
-  }
-  /* table inside guide */
-  .g-table { width:100%; border:1px solid #000; margin-top:5px; border-collapse:collapse; }
-  .g-table tr { border-bottom:1px solid #000; }
-  .g-table tr:last-child { border-bottom:none; }
-  .g-table .g-num {
-    width:50px; background:#000; color:#fff;
-    text-align:center; font-weight:700; font-size:13px; vertical-align:middle; padding:5px 0;
-  }
-  .g-table .g-desc { padding:5px 8px; font-size:10.5px; vertical-align:middle; }
-  .g-table2 { width:100%; border:1px solid #ccc; margin-top:5px; border-collapse:collapse; }
-  .g-table2 tr { border-bottom:1px solid #ccc; }
-  .g-table2 tr:last-child { border-bottom:none; }
-  .g-table2 .g-label {
-    width:140px; background:#f9f9f9; padding:5px 8px;
-    font-size:10px; font-weight:600; vertical-align:middle;
-    border-right:1px solid #ccc;
-  }
-  .g-table2 .g-desc2 { padding:5px 8px; font-size:10.5px; vertical-align:middle; color:#333; }
-  .g-table3 { width:100%; border:1px solid #ccc; margin-top:5px; border-collapse:collapse; }
-  .g-table3 tr { border-bottom:1px solid #ccc; }
-  .g-table3 tr:last-child { border-bottom:none; }
-  .g-table3 .g-label3 {
-    width:130px; background:#f9f9f9; padding:5px 7px;
-    font-size:10px; font-weight:600; vertical-align:middle;
-    border-right:1px solid #ccc;
-  }
-  .g-table3 .g-desc3 { padding:5px 7px; font-size:10px; vertical-align:middle; color:#444; }
-  /* guide page layout */
-  .guide-page { display:flex; flex-direction:column; }
-  .guide-page .section { margin-top:10px; page-break-inside:avoid; }
-  /* page footer */
-  .page-footer {
-    margin-top:auto;
-    border-top:1px solid #ccc; padding-top:10px;
-    font-size:9px; color:#999; text-align:center; letter-spacing:0.3px;
-  }
-  /* ─── PRINT ─── */
+  
+  /* ═══ PRINT / PDF STYLES ═══ */
   @media print {
-    body { background:#fff; padding:0; gap:0; }
-    .page { box-shadow:none; width:100%; padding:40px 48px; min-height:auto; page-break-after:always; }
-    .submit-bar { display:none; }
-    input[type="text"], textarea { background:transparent !important; }
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
     
-    /* Prevent option stacking */
+    body { 
+      background: white !important; 
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .page { 
+      box-shadow: none !important; 
+      width: 100% !important;
+      max-width: 100% !important;
+      page-break-after: always !important;
+      page-break-inside: avoid !important;
+      margin: 0 !important;
+      padding: 12mm !important;
+      min-height: auto !important;
+    }
+    
+    .page:last-child {
+      page-break-after: auto !important;
+    }
+    
+    .submit-bar { 
+      display: none !important; 
+    }
+    
+    /* Keep layouts horizontal */
+    .row {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 12px !important;
+      page-break-inside: avoid !important;
+    }
+    
     .check-row {
-      display:flex !important;
-      flex-wrap:wrap !important;
-      gap:6px 18px !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 4px 14px !important;
+      page-break-inside: avoid !important;
     }
+    
     .check-row .check-item {
-      display:inline-flex !important;
-      break-inside:avoid !important;
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 4px !important;
     }
+    
     .readiness-row {
-      display:flex !important;
-      gap:8px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      page-break-inside: avoid !important;
     }
-    .readiness-card {
-      flex:1 !important;
-      break-inside:avoid !important;
+    
+    .photo-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 6px !important;
+      page-break-inside: avoid !important;
     }
-  }
-  @media (max-width:840px) {
-    body { padding:20px 10px; }
-    .page { width:100%; padding:24px 16px; }
-    .row { flex-direction:column; gap:10px; }
-    .row .field.narrow { flex:unset; }
-    .photo-grid { grid-template-columns:repeat(2,1fr); }
-    .readiness-row { flex-wrap:wrap; }
-    .check-row { gap:4px 12px; font-size:10px; }
-    .header h1 { font-size:18px; }
-    .header-instructions { flex-direction:column; gap:8px; }
-  }
-  @media (max-width:480px) {
-    .page { padding:20px 12px; }
-    .header h1 { font-size:16px; }
-    .section-title { font-size:11px; }
-    .photo-grid { grid-template-columns:1fr; }
-    .readiness-row { flex-direction:column; }
-    .readiness-card { width:100%; }
+    
+    .ynu {
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 14px !important;
+    }
+    
+    /* Make filled values visible */
+    .filled-form input[type="text"]:not(:placeholder-shown),
+    .filled-form textarea:not(:placeholder-shown) {
+      font-weight: 600 !important;
+      color: #000 !important;
+      border-bottom: 1px solid #000 !important;
+    }
+    
+    .filled-form input[type="checkbox"]:checked + label,
+    .filled-form input[type="radio"]:checked + label {
+      font-weight: 700 !important;
+      text-decoration: underline !important;
+    }
+    
+    /* Prevent orphans */
+    .section {
+      page-break-inside: avoid !important;
+    }
+    
+    /* Keep header together */
+    .header {
+      page-break-after: avoid !important;
+    }
   }
 </style>
 </head>
@@ -259,12 +241,13 @@
 <!-- ═══ PAGE 1 — FORM ═══ -->
 <div class="page">
   <div class="header">
-    <h1>Machine Data Readiness Report</h1>
-    <div class="header-sub">Site Survey &amp; Integration Assessment</div>
+    <div>
+      <h1>Machine Data Readiness Report</h1>
+    </div>
     <div class="header-instructions">
-      <span><span class="tick">✔</span> Fill only what you can confirm</span>
-      <span><span class="tick">✔</span> If unsure, write "Unknown"</span>
-      <span><span class="tick">✔</span> Photos are highly valuable</span>
+      <div><span class="tick">✔</span> Fill only what you can confirm</div>
+      <div><span class="tick">✔</span> If unsure, write "Unknown"</div>
+      <div><span class="tick">✔</span> Photos are highly valuable</div>
     </div>
   </div>
   <form id="form">
@@ -272,20 +255,15 @@
     <div class="section">
       <div class="section-title">1 &nbsp; Customer &amp; Site Information</div>
       <div class="row">
+        <div class="field narrow"><label>Date (DD / MM / YYYY)</label><input type="text" name="date"></div>
+        <div class="field"><label>Surveyed By</label><input type="text" name="surveyor"></div>
+      </div>
+      <div class="row">
         <div class="field"><label>Customer / Company Name</label><input type="text" name="company"></div>
         <div class="field narrow"><label>Plant Location (City)</label><input type="text" name="location"></div>
       </div>
       <div class="row">
-        <div class="field"><label>Plant / Unit Name</label><input type="text" name="plant"></div>
-      </div>
-      <div class="row">
-        <div class="field narrow"><label>Survey Date (DD / MM / YYYY)</label><input type="text" name="date"></div>
-        <div class="field"><label>Surveyed By</label><input type="text" name="surveyor"></div>
-      </div>
-      <div class="row">
         <div class="field"><label>Customer Contact (Name &amp; Role)</label><input type="text" name="contact"></div>
-      </div>
-      <div class="row">
         <div class="field"><label>Phone / Email</label><input type="text" name="contact_info"></div>
       </div>
     </div>
@@ -298,26 +276,20 @@
       </div>
       <div class="row">
         <div class="field"><label>OEM / Manufacturer</label><input type="text" name="oem"></div>
-        <div class="field narrow"><label>Model</label><input type="text" name="model"></div>
-      </div>
-      <div class="row">
         <div class="field narrow"><label>Year Installed (Approx.)</label><input type="text" name="year"></div>
-        <div class="field"><label>Primary Function / Output</label><input type="text" name="function"></div>
       </div>
       <div class="row">
-        <div class="field narrow"><label>Last Calibrated (Date)</label><input type="text" name="last_calibrated"></div>
-        <div class="field"><label>Notes on Calibration</label><input type="text" name="calibration_notes"></div>
+        <div class="field narrow"><label>Model</label><input type="text" name="model"></div>
+        <div class="field"><label>Primary Function / Output</label><input type="text" name="function"></div>
       </div>
       <div class="row">
         <div class="field">
           <label>Machine Type / Process</label>
-          <div class="check-row" style="margin-top:6px;">
+          <div class="check-row" style="margin-top:4px;">
             <div class="check-item"><input type="checkbox" id="t1"><label for="t1">Pyrometer</label></div>
             <div class="check-item"><input type="checkbox" id="t2"><label for="t2">Spectrometer</label></div>
             <div class="check-item"><input type="checkbox" id="t3"><label for="t3">Energy Meter</label></div>
             <div class="check-item"><input type="checkbox" id="t4"><label for="t4">Furnace</label></div>
-            <div class="check-item"><input type="checkbox" id="t5"><label for="t5">CNC / Production Machine</label></div>
-            <div class="check-item"><input type="checkbox" id="t6"><label for="t6">Utility System</label></div>
           </div>
           <div class="other-inline">
             <div class="check-item"><input type="checkbox" id="t7"><label for="t7">Other:</label></div>
@@ -333,7 +305,7 @@
       <div class="row">
         <div class="field">
           <label>Dedicated Electrical Panel?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="panel" id="p1"><label for="p1">Yes</label></div>
             <div class="check-item"><input type="radio" name="panel" id="p2"><label for="p2">No</label></div>
             <div class="check-item"><input type="radio" name="panel" id="p3"><label for="p3">Unknown</label></div>
@@ -341,14 +313,14 @@
         </div>
         <div class="field">
           <label>Panel Accessible?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="acc" id="a1"><label for="a1">Yes</label></div>
             <div class="check-item"><input type="radio" name="acc" id="a2"><label for="a2">No</label></div>
           </div>
         </div>
         <div class="field narrow">
           <label>Panel Photo Taken?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="pphoto" id="pp1"><label for="pp1">Yes</label></div>
             <div class="check-item"><input type="radio" name="pphoto" id="pp2"><label for="pp2">No</label></div>
           </div>
@@ -357,7 +329,7 @@
       <div class="row">
         <div class="field">
           <label>PLC Present?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="plc" id="plc1"><label for="plc1">Yes</label></div>
             <div class="check-item"><input type="radio" name="plc" id="plc2"><label for="plc2">No</label></div>
             <div class="check-item"><input type="radio" name="plc" id="plc3"><label for="plc3">Unknown</label></div>
@@ -367,7 +339,7 @@
       <div class="row">
         <div class="field">
           <label>PLC Brand</label>
-          <div class="check-row" style="margin-top:6px;">
+          <div class="check-row" style="margin-top:4px;">
             <div class="check-item"><input type="checkbox" id="b1"><label for="b1">Siemens</label></div>
             <div class="check-item"><input type="checkbox" id="b2"><label for="b2">Mitsubishi</label></div>
             <div class="check-item"><input type="checkbox" id="b3"><label for="b3">Allen-Bradley</label></div>
@@ -380,8 +352,8 @@
             <input type="text">
           </div>
         </div>
+        <div class="field medium"><label>PLC Model</label><input type="text"></div>
       </div>
-      <div class="row"><div class="field"><label>PLC Model</label><input type="text"></div></div>
       <div class="row"><div class="field"><label>Notes</label><textarea></textarea></div></div>
       
       <div class="sub-title">3.2 &nbsp; Visible Ports (Only What You See)</div>
@@ -409,25 +381,26 @@
 
       <div class="sub-title">3.3 &nbsp; Ports Already in Use?</div>
       <div class="row">
-        <div class="field">
-          <div class="check-row ynu" style="margin-top:6px;">
+        <div class="field narrow">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="ports_in_use" id="pu1"><label for="pu1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ports_in_use" id="pu2"><label for="pu2">No</label></div>
             <div class="check-item"><input type="radio" name="ports_in_use" id="pu3"><label for="pu3">Unknown</label></div>
           </div>
         </div>
+        <div class="field"><label>If Yes, Connected To? (Describe what ports are connected to?)</label><input type="text" name="connected_to"></div>
       </div>
-      <div class="row"><div class="field"><label>If Yes, Connected To? (Describe what ports are connected to?)</label><input type="text" name="connected_to"></div></div>
       
       <div class="sub-title">3.4 &nbsp; Industrial Network Available?</div>
       <div class="row">
-        <div class="field">
-          <div class="check-row ynu" style="margin-top:6px;">
+        <div class="field narrow">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="indnet" id="in1"><label for="in1">PROFINET</label></div>
             <div class="check-item"><input type="radio" name="indnet" id="in2"><label for="in2">PROFIBUS</label></div>
             <div class="check-item"><input type="radio" name="indnet" id="in3"><label for="in3">No</label></div>
           </div>
         </div>
+        <div class="field"><label>Notes</label><input type="text"></div>
       </div>
     </div>
     <!-- 4 - HMI -->
@@ -436,7 +409,7 @@
       <div class="row">
         <div class="field">
           <label>HMI Present?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="hmi" id="h1"><label for="h1">Yes</label></div>
             <div class="check-item"><input type="radio" name="hmi" id="h2"><label for="h2">No</label></div>
             <div class="check-item"><input type="radio" name="hmi" id="h3"><label for="h3">Unknown</label></div>
@@ -447,7 +420,7 @@
       <div class="row">
         <div class="field">
           <label>Data Export Method</label>
-          <div class="check-row" style="margin-top:6px;">
+          <div class="check-row" style="margin-top:4px;">
             <div class="check-item"><input type="checkbox" id="ex1"><label for="ex1">USB</label></div>
             <div class="check-item"><input type="checkbox" id="ex2"><label for="ex2">Network</label></div>
             <div class="check-item"><input type="checkbox" id="ex3"><label for="ex3">Printed Reports</label></div>
@@ -463,7 +436,7 @@
       <div class="row">
         <div class="field">
           <label>Industrial PC Connected?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="pc" id="pc1"><label for="pc1">Yes</label></div>
             <div class="check-item"><input type="radio" name="pc" id="pc2"><label for="pc2">No</label></div>
             <div class="check-item"><input type="radio" name="pc" id="pc3"><label for="pc3">Unknown</label></div>
@@ -471,7 +444,7 @@
         </div>
         <div class="field">
           <label>Data Stored Here?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="ds" id="ds1"><label for="ds1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ds" id="ds2"><label for="ds2">No</label></div>
             <div class="check-item"><input type="radio" name="ds" id="ds3"><label for="ds3">Unknown</label></div>
@@ -480,8 +453,8 @@
       </div>
       <div class="row">
         <div class="field"><label>Operating System</label><input type="text"></div>
+        <div class="field"><label>Details</label><input type="text"></div>
       </div>
-      <div class="row"><div class="field"><label>Details</label><textarea></textarea></div></div>
     </div>
     <!-- 5 -->
     <div class="section">
@@ -522,48 +495,51 @@
       </div>
       <div class="row"><div class="field"><label>Observations</label><textarea></textarea></div></div>
     </div>
-    <!-- 6 - MODIFIED LAYOUT -->
+    <!-- 6 -->
     <div class="section">
       <div class="section-title">6 &nbsp; Internet Availability near Hardware</div>
       <div class="row">
         <div class="field">
           <label>Internet Available near Hardware?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="ia" id="ia1"><label for="ia1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ia" id="ia2"><label for="ia2">No</label></div>
           </div>
         </div>
         <div class="field">
-          <label>Is Hardware already connected to a network?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="hw_network" id="hwn1"><label for="hwn1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="hw_network" id="hwn2"><label for="hwn2">No</label></div>
-            <div class="check-item"><input type="radio" name="hw_network" id="hwn3"><label for="hwn3">Maybe</label></div>
+          <label>Hardware already connected to network?</label>
+          <div class="check-row ynu" style="margin-top:4px;">
+            <div class="check-item"><input type="radio" name="nc" id="nc1"><label for="nc1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="nc" id="nc2"><label for="nc2">No</label></div>
+            <div class="check-item"><input type="radio" name="nc" id="nc3"><label for="nc3">Unknown</label></div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="field">
-          <label>If Yes</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="conn_type" id="ct1"><label for="ct1">LAN</label></div>
-            <div class="check-item"><input type="radio" name="conn_type" id="ct2"><label for="ct2">WiFi</label></div>
-            <div class="check-item"><input type="radio" name="conn_type" id="ct3"><label for="ct3">Both</label></div>
+          <label>Connection Method</label>
+          <div class="check-row" style="margin-top:4px;">
+            <div class="check-item"><input type="checkbox" id="cm1"><label for="cm1">Wired (Ethernet)</label></div>
+            <div class="check-item"><input type="checkbox" id="cm2"><label for="cm2">Wi-Fi</label></div>
+            <div class="check-item"><input type="checkbox" id="cm3"><label for="cm3">4G / 5G</label></div>
           </div>
         </div>
-        <div class="field">
-          <label>Is Hardware has Internet?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="hw_internet" id="hwi1"><label for="hwi1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="hw_internet" id="hwi2"><label for="hwi2">No</label></div>
-            <div class="check-item"><input type="radio" name="hw_internet" id="hwi3"><label for="hwi3">Maybe</label></div>
+        <div class="field narrow"><label>RSSI (if Wi-Fi)</label><input type="text"></div>
+      </div>
+      <div class="row">
+        <div class="field narrow">
+          <label>IP Type</label>
+          <div class="check-row ynu" style="margin-top:4px;">
+            <div class="check-item"><input type="radio" name="ip" id="ip1"><label for="ip1">Static</label></div>
+            <div class="check-item"><input type="radio" name="ip" id="ip2"><label for="ip2">Auto</label></div>
           </div>
         </div>
+        <div class="field"><label>IP Address (if known)</label><input type="text"></div>
       </div>
       <div class="row">
         <div class="field">
           <label>Firewall present?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="fw" id="fw1"><label for="fw1">Yes</label></div>
             <div class="check-item"><input type="radio" name="fw" id="fw2"><label for="fw2">No</label></div>
             <div class="check-item"><input type="radio" name="fw" id="fw3"><label for="fw3">Maybe</label></div>
@@ -571,7 +547,7 @@
         </div>
         <div class="field">
           <label>IT approval needed?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
+          <div class="check-row ynu" style="margin-top:4px;">
             <div class="check-item"><input type="radio" name="it" id="it1"><label for="it1">Yes</label></div>
             <div class="check-item"><input type="radio" name="it" id="it2"><label for="it2">No</label></div>
             <div class="check-item"><input type="radio" name="it" id="it3"><label for="it3">Maybe</label></div>
@@ -582,14 +558,18 @@
     <!-- 7 -->
     <div class="section">
       <div class="section-title">7 &nbsp; Data Readiness Level</div>
-      <div class="readiness-row">
-        <label class="readiness-card"><input type="radio" name="rl" value="0"><div class="r-num">0</div><div class="r-label">No digital data</div></label>
-        <label class="readiness-card"><input type="radio" name="rl" value="1"><div class="r-num">1</div><div class="r-label">Screen only</div></label>
-        <label class="readiness-card"><input type="radio" name="rl" value="2"><div class="r-num">2</div><div class="r-label">Inside PLC/HMI</div></label>
-        <label class="readiness-card"><input type="radio" name="rl" value="3"><div class="r-num">3</div><div class="r-label">On network</div></label>
-        <label class="readiness-card"><input type="radio" name="rl" value="4"><div class="r-num">4</div><div class="r-label">Cloud ready</div></label>
+      <div class="row">
+        <div class="field">
+          <div class="check-row" style="margin-top:4px;">
+            <div class="check-item"><input type="checkbox" id="rl0"><label for="rl0">0</label></div>
+            <div class="check-item"><input type="checkbox" id="rl1"><label for="rl1">1</label></div>
+            <div class="check-item"><input type="checkbox" id="rl2"><label for="rl2">2</label></div>
+            <div class="check-item"><input type="checkbox" id="rl3"><label for="rl3">3</label></div>
+            <div class="check-item"><input type="checkbox" id="rl4"><label for="rl4">4</label></div>
+          </div>
+        </div>
       </div>
-      <div class="row" style="margin-top:12px;"><div class="field"><label>Reason</label><textarea></textarea></div></div>
+      <div class="row"><div class="field"><label>Reason</label><textarea></textarea></div></div>
     </div>
     <!-- 8 -->
     <div class="section">
@@ -642,7 +622,7 @@
     <!-- 11 -->
     <div class="section">
       <div class="section-title">11 &nbsp; Additional Comments</div>
-      <div class="row"><div class="field"><textarea style="min-height:72px;"></textarea></div></div>
+      <div class="row"><div class="field"><textarea style="min-height:60px;"></textarea></div></div>
     </div>
     <div class="submit-bar">
       <button type="button" class="btn-submit" onclick="generatePDF()">Save as PDF</button>
@@ -650,412 +630,19 @@
     </div>
   </form>
 </div>
-<!-- ═══ GUIDE PAGE 1 ═══ -->
-<div class="page guide-page">
-  <div class="guide-header">
-    <div>
-      <h1>Filling Guide</h1>
-      <div style="font-size:11px; color:#555; margin-top:2px;">Machine Data Readiness Report</div>
-    </div>
-    <div class="guide-badge">Guide — Page 1 of 3</div>
-  </div>
-  <div class="guide-intro">
-    This guide walks you through every section of the form. You do not need technical expertise — only observe and record what you physically see at the site. When in doubt, always mark <strong>Unknown</strong>.
-  </div>
-  <div class="section">
-    <div class="section-title">General Rules</div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:18px;">✔</div>
-      <div class="guide-body">
-        <h3>Only confirm what you see</h3>
-        <p>Do not guess or assume. If a panel is locked and you cannot look inside, mark fields as <strong>Unknown</strong> rather than guessing.</p>
-      </div>
-    </div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:18px;">✔</div>
-      <div class="guide-body">
-        <h3>Checkboxes vs Radio buttons</h3>
-        <p><strong>Checkboxes ☐</strong> — you can select more than one. Used for machine types, ports, brands, etc.<br>
-        <strong>Radio buttons ◯</strong> — pick only one. Used for Yes / No / Unknown questions.</p>
-      </div>
-    </div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:18px;">✔</div>
-      <div class="guide-body">
-        <h3>Take photos whenever possible</h3>
-        <p>Photos save the technical team significant time. Even a quick phone photo of a nameplate, panel, or screen is highly valuable.</p>
-      </div>
-    </div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:18px;">✔</div>
-      <div class="guide-body">
-        <h3>Date format</h3>
-        <p>Write the survey date as <strong>DD / MM / YYYY</strong> — for example: 03 / 02 / 2026</p>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 1 — Customer &amp; Site Information</div>
-    <div class="guide-row">
-      <div class="guide-num">1</div>
-      <div class="guide-body">
-        <h3>Basic site details</h3>
-        <p>Fill in details about who you are visiting and where. Ask the on-site contact for the exact plant unit name if it is not displayed on signage. Record their direct phone or email — the team may need to follow up.</p>
-        <div class="tip"><strong>Tip:</strong> The customer contact name and role helps us route questions to the right person later. If there are multiple contacts, write the most relevant one.</div>
-        <div class="example">
-          <div class="ex-label">Example</div>
-          Customer: Tata Steel Ltd &nbsp;&nbsp; Plant: Jamshedpur Unit 3<br>
-          Contact: Rajesh Mehta — Maintenance Manager<br>
-          Phone: 0657-XXX-XXXX &nbsp; Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b2975363e332f3a1b2f3a2f3a282f3e3e3775383436">[email&#160;protected]</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 2 — Machine Overview</div>
-    <div class="guide-row">
-      <div class="guide-num">2</div>
-      <div class="guide-body">
-        <h3>Read the machine nameplate</h3>
-        <p>Look for a <strong>nameplate</strong> — usually a metal plate bolted or welded to the machine body. It typically shows the manufacturer, model number, and year. If the nameplate is missing or unreadable, fill what you can and take a photo of the area.</p>
-        <p>For <strong>Last Calibrated</strong>, check if there's a calibration sticker or certificate visible on or near the machine. This is especially important for measurement equipment like pyrometers, spectrometers, and energy meters. If you cannot find calibration records, mark as "Unknown" in the notes field.</p>
-        <p>For <strong>Machine Type</strong>, tick every option that applies. A furnace can also be a utility system, for example. Use "Other" only if none of the listed options fit.</p>
-        <div class="example">
-          <div class="ex-label">Example</div>
-          OEM: ABB &nbsp;&nbsp; Model: IRB 6700 &nbsp;&nbsp; Year: 2020<br>
-          Primary Function: Robotic welding arm for auto body panels<br>
-          Machine Type: ☑ CNC / Production Machine
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 1 of 3</div>
-</div>
-<!-- ═══ GUIDE PAGE 2 ═══ -->
-<div class="page guide-page">
-  <div class="guide-header">
-    <div>
-      <h1>Filling Guide</h1>
-      <div style="font-size:11px; color:#555; margin-top:2px;">Machine Data Readiness Report</div>
-    </div>
-    <div class="guide-badge">Guide — Page 2 of 3</div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 3 — Hardware &amp; Control System</div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:11px;">3.1</div>
-      <div class="guide-body">
-        <h3>Control Panel</h3>
-        <p>A <strong>dedicated electrical panel</strong> is a separate box or cabinet that houses only this machine's wiring and controllers — usually grey or steel-coloured, sometimes with a tag number. If the panel door is locked, mark <strong>Panel Accessible: No</strong> and do not force it open.</p>
-        <p>A <strong>PLC</strong> (Programmable Logic Controller) is the brain of the machine. It looks like a small rectangular module mounted on a DIN rail inside the panel. The brand name is printed on the front face.</p>
-        <div class="tip"><strong>Tip:</strong> If you can see a PLC but cannot read the brand or model, take a close-up photo. The label is usually on the top or front of the module.</div>
-      </div>
-    </div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:11px;">3.2</div>
-      <div class="guide-body">
-        <h3>Visible Ports</h3>
-        <p>Look at the back, side, or top of the control panel or machine for any connectors or cables. Here is what common ports look like:</p>
-        <table class="g-table2">
-          <tr><td class="g-label">Ethernet (RJ45)</td><td class="g-desc2">Looks like a wide USB plug — 8 pins inside a rectangular clip.</td></tr>
-          <tr><td class="g-label">M12</td><td class="g-desc2">Round industrial connector, common on machines exposed to dust or moisture.</td></tr>
-          <tr><td class="g-label">RS-485 / RS-422 / RS-232</td><td class="g-desc2">Small 9-pin or 5-pin serial connectors — older style, sometimes labelled "COM".</td></tr>
-          <tr><td class="g-label">USB (Service)</td><td class="g-desc2">Standard USB-A port. Often behind a small flap labelled "Service" or "Maintenance".</td></tr>
-          <tr><td class="g-label">Type A / Type C</td><td class="g-desc2">USB connector types - Type A is the standard rectangular USB, Type C is the newer reversible connector.</td></tr>
-        </table>
-      </div>
-    </div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:11px;">3.3</div>
-      <div class="guide-body">
-        <h3>Ports Already in Use?</h3>
-        <p>Check if any of the visible ports already have cables plugged into them. If yes, describe what they're connected to (such as "Connected to local PC", "Connected to factory network switch", "USB drive for data export", etc.).</p>
-        <div class="tip"><strong>Tip:</strong> Knowing which ports are already occupied helps determine which ones are available for new connections without disrupting existing systems.</div>
-      </div>
-    </div>
-    <div class="guide-row">
-      <div class="guide-num" style="font-size:11px;">3.4</div>
-      <div class="guide-body">
-        <h3>Industrial Network Available?</h3>
-        <p>Some industrial machines use specialized networking protocols. Here are the two most common:</p>
-        <table class="g-table2">
-          <tr><td class="g-label">PROFINET</td><td class="g-desc2">Modern industrial Ethernet protocol by Siemens. Uses standard Ethernet cables but runs special industrial communication. Common in automated manufacturing.</td></tr>
-          <tr><td class="g-label">PROFIBUS</td><td class="g-desc2">Older fieldbus protocol using RS-485 cables. Purple cables are typical. Still widely used in process industries and older installations.</td></tr>
-        </table>
-        <p style="margin-top:8px;">Look for labels on cables or ports that say "PROFINET" or "PROFIBUS". If you don't see either, select "No".</p>
-        <div class="tip"><strong>Tip:</strong> PROFINET cables look like regular Ethernet but may be green or have industrial-grade connectors. PROFIBUS cables are often purple or have a distinctive 9-pin D-sub connector.</div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 4 — HMI &amp; Computer</div>
-    <div class="guide-row">
-      <div class="guide-num">4</div>
-      <div class="guide-body">
-        <h3>What is an HMI?</h3>
-        <p>An <strong>HMI</strong> (Human Machine Interface) is the touchscreen or display panel operators use to monitor the machine. Modern HMIs may have data export capabilities via USB, network, or print functions.</p>
-        <p>An <strong>Industrial PC</strong> is different - it's an actual computer that can store and process data. It usually runs Windows or Linux and has storage capabilities.</p>
-        <div class="tip"><strong>Tip:</strong> HMIs display data and may allow exports, computers store it long-term. Fill both sections if the machine has both.</div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 5 — Data Availability</div>
-    <div class="guide-row">
-      <div class="guide-num">5</div>
-      <div class="guide-body">
-        <h3>Where does data live?</h3>
-        <p>This is about where the machine's readings actually get <strong>stored</strong> — not just displayed. Tick more than one box if applicable. A machine might show temperature on screen but also log it inside the PLC.</p>
-        <p>Note that <strong>HMI</strong> and <strong>Local PC</strong> are now separate options since only computers typically store data long-term.</p>
-        <p>For <strong>5.2 Data Types Visible</strong>, list every kind of reading you can see anywhere at the machine.</p>
-        <div class="example">
-          <div class="ex-label">Example — Data Types</div>
-          Temperature (°C), furnace pressure (bar), cycle count, alarm log, energy consumption (kWh), RPM
-        </div>
-        <p>For <strong>5.3 Data Frequency</strong>, this means how often new data points are recorded — not how often you look at the screen. Ask the operator if unsure.</p>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 6 — Internet Availability near Hardware</div>
-    <div class="guide-row">
-      <div class="guide-num">6</div>
-      <div class="guide-body">
-        <h3>Network connectivity check</h3>
-        <p><strong>Internet Available near Hardware</strong> — Check if there is active internet connectivity in the immediate area around the machine. This could be via WiFi signal, nearby router, or LAN access. Test with a phone or laptop if possible.</p>
-        <p><strong>If Yes</strong> — Specify whether the internet is available through LAN (wired Ethernet), WiFi (wireless), or Both.</p>
-        <p><strong>Is Hardware already connected to a network</strong> — Is the machine or its control panel already wired into any network? Look for Ethernet cables running from the panel to switches or network infrastructure.</p>
-        <p><strong>Is Hardware has Internet</strong> — Does the hardware itself have active internet connectivity right now? This is different from having network access nearby.</p>
-        <p><strong>Firewall present</strong> — Are there network security measures or firewalls that control what can connect to the network? Ask IT or plant management if unsure.</p>
-        <p><strong>IT approval needed</strong> — Some factories require formal sign-off before connecting any new device to their network. Ask the plant manager or IT contact.</p>
-        <div class="tip"><strong>Tip:</strong> The goal is to understand what internet/network options exist near the machine. Even if the machine isn't currently connected, knowing what's available helps plan the integration.</div>
-      </div>
-    </div>
-  </div>
-  <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 2 of 3</div>
-</div>
-<!-- ═══ GUIDE PAGE 3 ═══ -->
-<div class="page guide-page">
-  <div class="guide-header">
-    <div>
-      <h1>Filling Guide</h1>
-      <div style="font-size:11px; color:#555; margin-top:2px;">Machine Data Readiness Report</div>
-    </div>
-    <div class="guide-badge">Guide — Page 3 of 3</div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 7 — Data Readiness Level</div>
-    <div class="guide-row">
-      <div class="guide-num">7</div>
-      <div class="guide-body">
-        <h3>Pick the highest level that applies</h3>
-        <p>This is the most important single answer on the form. Use the table below to decide.</p>
-        <table class="g-table">
-          <tr><td class="g-num">0</td><td class="g-desc"><strong>No digital data at all.</strong> Everything is written on paper or read by eye. No screen or controller shows numbers.</td></tr>
-          <tr><td class="g-num">1</td><td class="g-desc"><strong>Numbers appear on screen only.</strong> You can see live readings, but they are not saved anywhere. Once the display updates, old data is gone.</td></tr>
-          <tr><td class="g-num">2</td><td class="g-desc"><strong>Data is stored inside the machine.</strong> The PLC or HMI saves readings locally. You might export via USB, but nothing goes to a network.</td></tr>
-          <tr><td class="g-num">3</td><td class="g-desc"><strong>Data is on the factory network.</strong> It flows to a SCADA system, local server, or shared database that other computers can access.</td></tr>
-          <tr><td class="g-num">4</td><td class="g-desc"><strong>Data reaches the cloud.</strong> Already being sent to an off-site or cloud platform (e.g. AWS, Azure, or an IIoT dashboard).</td></tr>
-        </table>
-        <div class="tip" style="margin-top:10px;"><strong>Tip:</strong> If you are unsure, pick the level you are most confident about and explain in the <strong>Reason</strong> box.</div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 8 — Likely Integration Method</div>
-    <div class="guide-row">
-      <div class="guide-num">8</div>
-      <div class="guide-body">
-        <h3>How will we connect to this machine?</h3>
-        <p>This is a first guess — the technical team will confirm later. Use these guidelines:</p>
-        <table class="g-table2">
-          <tr><td class="g-label">Direct Connection</td><td class="g-desc2">The machine has a PLC or accessible port. Data already exists digitally and can be tapped into.</td></tr>
-          <tr><td class="g-label">HMI</td><td class="g-desc2">The machine has possible direct HMI connection</td></tr>
-          <tr><td class="g-label">AI Camera Reading</td><td class="g-desc2">No ports or PLC accessible. We place a camera in front of the display and use AI to read the numbers from the screen.</td></tr>
-          <tr><td class="g-label">Hybrid</td><td class="g-desc2">Some data can come from a direct connection and some requires a camera. Or the situation needs more investigation.</td></tr>
-          <tr><td class="g-label">Not Sure</td><td class="g-desc2">Tick this if you genuinely cannot tell. Write any observations in the Why box.</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 9 — Constraints / Risks</div>
-    <div class="guide-row">
-      <div class="guide-num">9</div>
-      <div class="guide-body">
-        <h3>What could get in the way?</h3>
-        <p>Tick every constraint you come across. These are not failures — the technical team just needs to plan around them.</p>
-        <table class="g-table2">
-          <tr><td class="g-label">OEM Restrictions</td><td class="g-desc2">The machine manufacturer does not allow third-party modifications or connections.</td></tr>
-          <tr><td class="g-label">Locked Panels</td><td class="g-desc2">The electrical panel is sealed. Only the OEM or a certified technician can open it.</td></tr>
-          <tr><td class="g-label">No Network Access</td><td class="g-desc2">The machine is physically isolated — no cable or Wi-Fi reaches it.</td></tr>
-          <tr><td class="g-label">Harsh Environment</td><td class="g-desc2">The area is very hot, dusty, or damp. Placing sensors or cameras needs special equipment.</td></tr>
-          <tr><td class="g-label">Safety Limits</td><td class="g-desc2">The area has safety zones or restricted access rules during operation.</td></tr>
-        </table>
-        <div class="tip" style="margin-top:8px;"><strong>Tip:</strong> Be specific in the Details box. Example: "Panel locked — key held by Mr. Raju, Maintenance" or "Area exceeds 80°C during operation".</div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 10 — Photo Checklist</div>
-    <div class="guide-row">
-      <div class="guide-num">10</div>
-      <div class="guide-body">
-        <h3>What to photograph and how</h3>
-        <p>Photos are the single most useful thing you can bring back. Tick each box after you have taken that shot.</p>
-        <table class="g-table3">
-          <tr><td class="g-label3">Machine Nameplate</td><td class="g-desc3">Close-up of the metal plate — must be readable. Show model, serial number, year.</td></tr>
-          <tr><td class="g-label3">Panel Interior</td><td class="g-desc3">Inside the control panel with wiring and modules visible. Only if safely accessible.</td></tr>
-          <tr><td class="g-label3">Communication Ports</td><td class="g-desc3">Any ports or connectors visible on the panel or machine body. Include cables if plugged in.</td></tr>
-          <tr><td class="g-label3">HMI Screen</td><td class="g-desc3">The operator screen while showing live data. Capture software name if visible on the title bar.</td></tr>
-          <tr><td class="g-label3">Network Cabinet</td><td class="g-desc3">Any switch box or network rack in or near the machine area.</td></tr>
-          <tr><td class="g-label3">Overall Machine</td><td class="g-desc3">A wide shot of the full machine in its surroundings — helps the team understand the physical layout.</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Section 11 — Additional Comments</div>
-    <div class="guide-row">
-      <div class="guide-num">11</div>
-      <div class="guide-body">
-        <h3>Anything else you noticed</h3>
-        <p>Write anything that did not fit elsewhere. This often turns out to be the most useful part of the form. Common things to note:</p>
-        <div class="example">
-          <div class="ex-label">Examples of useful comments</div>
-          "Machine was not running during the visit — readings may differ when live"<br>
-          "Operator mentioned a firmware upgrade is planned next month"<br>
-          "There is a second identical machine on the same line — Line 4B"<br>
-          "The plant manager wants a demo before approving network access"
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 3 of 3</div>
-</div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function generatePDF() {
-  // Get form
   const form = document.querySelector('form');
-  
-  // Check if at least one important field is filled
-  const machineNameInput = form.querySelector('input[name="machine_name"]');
-  const companyInput = form.querySelector('input[name="company"]');
-  const oemInput = form.querySelector('input[name="oem"]');
-  
-  // Check if any checkboxes or radios are selected
-  const anyCheckboxChecked = Array.from(form.querySelectorAll('input[type="checkbox"]')).some(cb => cb.checked);
-  const anyRadioChecked = Array.from(form.querySelectorAll('input[type="radio"]')).some(r => r.checked);
-  
-  // Relaxed validation - just need SOMETHING filled
-  const hasMinimumData = (machineNameInput && machineNameInput.value.trim() !== '') || 
-                         (companyInput && companyInput.value.trim() !== '') ||
-                         (oemInput && oemInput.value.trim() !== '') ||
-                         anyCheckboxChecked || 
-                         anyRadioChecked;
-  
-  if (!hasMinimumData) {
-    alert('Please fill at least the Machine Name, Company Name, OEM field, etc. before generating PDF');
-    return;
-  }
-  
-  // Hide the submit bar before printing
   const submitBar = document.querySelector('.submit-bar');
   submitBar.style.display = 'none';
-  
-  // Add filled class to show values are filled
-  const formPage = document.querySelector('.page:not(.guide-page)');
+  const formPage = document.querySelector('.page');
   formPage.classList.add('filled-form');
-  
-  // Print (which allows Save as PDF)
   window.print();
-  
-  // Restore submit bar after print dialog
   setTimeout(() => {
     submitBar.style.display = 'flex';
     formPage.classList.remove('filled-form');
   }, 100);
 }
 </script>
-<style>
-/* Make filled inputs more visible when printing */
-@media print {
-  .submit-bar { display: none !important; }
-  .guide-page { display: none !important; }
-  body { background: white; padding: 0; }
-  .page { 
-    box-shadow: none; 
-    width: 100%;
-    page-break-after: avoid;
-  }
-  
-  /* Make filled values bold and visible */
-  .filled-form input[type="text"]:not(:placeholder-shown),
-  .filled-form textarea:not(:placeholder-shown) {
-    font-weight: 600 !important;
-    color: #000 !important;
-    border-bottom: 1px solid #000 !important;
-  }
-  
-  .filled-form input[type="checkbox"]:checked + label,
-  .filled-form input[type="radio"]:checked + label {
-    font-weight: 700 !important;
-    text-decoration: underline !important;
-  }
-  
-  /* Prevent stacking of options in PDF */
-  .check-row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 6px 18px !important;
-  }
-  
-  .check-row .check-item {
-    display: inline-flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 5px !important;
-  }
-  
-  .row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 16px !important;
-  }
-  
-  .readiness-row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-  }
-  
-  .photo-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
-  }
-  
-  .ynu {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 18px !important;
-  }
-  
-  /* A4 page setup */
-  @page {
-    size: A4;
-    margin: 10mm;
-  }
-  
-  .page {
-    page-break-after: always !important;
-    page-break-inside: avoid !important;
-    margin: 0 !important;
-    padding: 15mm !important;
-  }
-}
-</style>
 </body>
 </html>
