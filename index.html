@@ -706,7 +706,7 @@
           <div class="ex-label">Example</div>
           Customer: Tata Steel Ltd &nbsp;&nbsp; Plant: Jamshedpur Unit 3<br>
           Contact: Rajesh Mehta — Maintenance Manager<br>
-          Phone: 0657-XXX-XXXX &nbsp; Email: r.mehta@tatasteel.com
+          Phone: 0657-XXX-XXXX &nbsp; Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b2975363e332f3a1b2f3a2f3a282f3e3e3775383436">[email&#160;protected]</a>
         </div>
       </div>
     </div>
@@ -933,7 +933,7 @@
   </div>
   <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 3 of 3</div>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function generatePDF() {
   // Get form
   const form = document.querySelector('form');
@@ -1012,13 +1012,48 @@ function generatePDF() {
   
   .check-row .check-item {
     display: inline-flex !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 5px !important;
+  }
+  
+  .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
   }
   
   .readiness-row {
     display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     gap: 8px !important;
+  }
+  
+  .photo-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  
+  .ynu {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 18px !important;
+  }
+  
+  /* A4 page setup */
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+  
+  .page {
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    margin: 0 !important;
+    padding: 15mm !important;
   }
 }
 </style>
