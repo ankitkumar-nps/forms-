@@ -11,127 +11,146 @@
     background: #e8e8e8;
     font-family: 'IBM Plex Sans', sans-serif;
     color: #000;
-    padding: 40px 20px;
+    padding: 30px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
   }
-  /* ═══ SHARED PAGE ═══ */
   .page {
     width: 794px;
-    min-height: 1123px;
     background: #fff;
-    padding: 52px 58px 48px;
+    padding: 38px 48px 32px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.12);
     position: relative;
   }
   /* ─── HEADER ─── */
   .header {
     border-bottom: 3px solid #000;
-    padding-bottom: 14px;
-    margin-bottom: 6px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
-  .header h1 { font-size:20px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; }
+  .header h1 { font-size:18px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; }
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .header-date-row {
+    display: flex;
+    gap: 10px;
+    font-size: 8px;
+  }
+  .header-date-row .mini-field {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-date-row label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+  .header-date-row input {
+    border: none;
+    border-bottom: 1px solid #000;
+    font-family: inherit;
+    font-size: 9px;
+    padding: 2px;
+    width: 100px;
+  }
   .header-instructions {
     border: 1px solid #000;
-    padding: 6px 10px;
-    font-size: 9px;
-    line-height: 1.4;
-    max-width: 280px;
+    padding: 4px 8px;
+    font-size: 7.5px;
+    line-height: 1.3;
+    max-width: 240px;
   }
-  .header-instructions .tick { font-weight:700; margin-right: 4px; }
+  .header-instructions .tick { font-weight:700; margin-right: 3px; }
+  
   /* ─── SECTION ─── */
-  .section { margin-top: 14px; }
+  .section { margin-top: 11px; }
   .section-title {
-    font-size:12px; font-weight:700; text-transform:uppercase;
-    letter-spacing:0.6px; background:#000; color:#fff;
-    padding:4px 10px; margin-bottom:10px;
+    font-size:10px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.5px; background:#000; color:#fff;
+    padding:3px 8px; margin-bottom:8px;
   }
   .sub-title {
-    font-size:11px; font-weight:600; text-transform:uppercase;
-    letter-spacing:0.4px; border-bottom:1px solid #000;
-    padding-bottom:2px; margin:12px 0 8px;
+    font-size:9px; font-weight:600; text-transform:uppercase;
+    letter-spacing:0.3px; border-bottom:1px solid #000;
+    padding-bottom:2px; margin:9px 0 6px;
   }
+  
   /* ─── ROWS & FIELDS ─── */
-  .row { display:flex; gap:12px; margin-bottom:10px; }
+  .row { display:flex; gap:12px; margin-bottom:8px; }
   .row .field { flex:1; }
-  .row .field.narrow { flex:0 0 140px; }
-  .row .field.medium { flex:0 0 200px; }
+  .row .field.narrow { flex:0 0 120px; }
+  .row .field.medium { flex:0 0 180px; }
+  .row .field.wide { flex:0 0 240px; }
   .field { display:flex; flex-direction:column; }
   .field label {
-    font-size:9px; font-weight:600; text-transform:uppercase;
-    letter-spacing:0.4px; color:#333; margin-bottom:3px;
+    font-size:8px; font-weight:600; text-transform:uppercase;
+    letter-spacing:0.3px; color:#333; margin-bottom:3px;
   }
-  .field input[type="text"], .field textarea {
+  .field input[type="text"] {
     border:none; border-bottom:1px solid #000;
-    font-family:inherit; font-size:11px;
+    font-family:inherit; font-size:10px;
     padding:3px 2px; outline:none;
     background:transparent; width:100%; color:#000;
   }
-  .field textarea {
-    border:1px solid #000; padding:5px 6px;
-    resize:vertical; min-height:40px; font-size:10px;
-  }
-  .field input[type="text"]:focus, .field textarea:focus {
+  .field input[type="text"]:focus {
     border-color:#2563eb; background:#fafafa;
   }
+  
   /* ─── CHECKBOXES / RADIOS ─── */
   .check-row {
     display:flex; flex-wrap:wrap;
-    gap:4px 14px; align-items:center; margin-bottom:8px;
+    gap:4px 14px; align-items:center;
   }
-  .check-row .check-item { display:flex; align-items:center; gap:4px; font-size:10px; }
-  .check-row .check-item input { width:12px; height:12px; accent-color:#2563eb; cursor:pointer; }
+  .check-row .check-item { display:flex; align-items:center; gap:4px; font-size:9px; }
+  .check-row .check-item input { width:11px; height:11px; accent-color:#2563eb; cursor:pointer; }
   .check-row .check-item label {
     cursor:pointer; text-transform:none;
     font-weight:400; letter-spacing:0; margin:0;
   }
-  .other-inline { display:flex; align-items:center; gap:6px; margin-top:4px; }
-  .other-inline .check-item { display:flex; align-items:center; gap:8px; }
-  .other-inline label { font-size:10px; font-weight:600; white-space:nowrap; }
+  .other-inline { display:flex; align-items:center; gap:5px; margin-top:4px; }
+  .other-inline .check-item { display:flex; align-items:center; gap:6px; }
+  .other-inline label { font-size:9px; font-weight:600; white-space:nowrap; }
   .other-inline input[type="text"] {
     flex:1; border:none; border-bottom:1px solid #000;
-    font-family:inherit; font-size:10px; padding:2px 0; outline:none;
+    font-family:inherit; font-size:9px; padding:2px 0; outline:none;
   }
   .ynu { display:flex; gap:14px; }
-  /* ─── READINESS CARDS ─── */
-  .readiness-row { display:flex; gap:6px; margin-top:4px; }
-  .readiness-card {
-    flex:1; border:1px solid #000; padding:6px 4px;
-    text-align:center; cursor:pointer; position:relative;
-  }
-  .readiness-card input[type="radio"] { position:absolute; opacity:0; width:0; height:0; }
-  .readiness-card:has(input:checked) { background:#2563eb; color:#fff; border-color:#2563eb; }
-  .readiness-card .r-num { font-size:14px; font-weight:700; }
-  .readiness-card .r-label { font-size:8px; margin-top:2px; text-transform:uppercase; letter-spacing:0.3px; }
+  
   /* ─── PHOTO GRID ─── */
-  .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
-  .photo-box {
-    border:1px solid #000; padding:6px 8px;
-    display:flex; align-items:center; gap:6px;
-    font-size:10px; cursor:pointer;
+  .photo-row { display:flex; gap:10px; flex-wrap:wrap; }
+  .photo-item {
+    display:flex; align-items:center; gap:4px;
+    font-size:9px; border:1px solid #000;
+    padding:4px 6px; cursor:pointer;
   }
-  .photo-box input { accent-color:#2563eb; width:12px; height:12px; }
-  .photo-box label { cursor:pointer; margin:0; text-transform:none; font-weight:400; letter-spacing:0; }
+  .photo-item input { accent-color:#2563eb; width:11px; height:11px; }
+  .photo-item label { cursor:pointer; margin:0; text-transform:none; font-weight:400; }
+  
   /* ─── SUBMIT ─── */
   .submit-bar {
-    margin-top:20px; border-top:2px solid #000;
-    padding-top:14px; display:flex; justify-content:center; gap:14px;
+    margin-top:15px; border-top:2px solid #000;
+    padding-top:10px; display:flex; justify-content:center; gap:14px;
   }
   .btn-submit {
     background:#2563eb; color:#fff; border:none; font-family:inherit;
-    font-size:11px; font-weight:600; text-transform:uppercase;
-    letter-spacing:1px; padding:9px 32px; cursor:pointer;
+    font-size:10px; font-weight:600; text-transform:uppercase;
+    letter-spacing:0.8px; padding:8px 28px; cursor:pointer;
   }
   .btn-submit:hover { background:#1d4ed8; }
   .btn-reset {
     background:#fff; color:#000; border:1px solid #000;
-    font-family:inherit; font-size:10px; padding:9px 24px;
-    cursor:pointer; text-transform:uppercase; letter-spacing:0.5px;
+    font-family:inherit; font-size:9px; padding:8px 22px;
+    cursor:pointer; text-transform:uppercase; letter-spacing:0.4px;
   }
   .btn-reset:hover { background:#f0f0f0; }
   
@@ -139,7 +158,7 @@
   @media print {
     @page {
       size: A4;
-      margin: 10mm;
+      margin: 8mm;
     }
     
     body { 
@@ -153,10 +172,8 @@
       width: 100% !important;
       max-width: 100% !important;
       page-break-after: always !important;
-      page-break-inside: avoid !important;
       margin: 0 !important;
-      padding: 12mm !important;
-      min-height: auto !important;
+      padding: 10mm !important;
     }
     
     .page:last-child {
@@ -167,12 +184,11 @@
       display: none !important; 
     }
     
-    /* Keep layouts horizontal */
     .row {
       display: flex !important;
       flex-direction: row !important;
       flex-wrap: nowrap !important;
-      gap: 12px !important;
+      gap: 10px !important;
       page-break-inside: avoid !important;
     }
     
@@ -180,7 +196,6 @@
       display: flex !important;
       flex-wrap: wrap !important;
       gap: 4px 14px !important;
-      page-break-inside: avoid !important;
     }
     
     .check-row .check-item {
@@ -190,19 +205,10 @@
       gap: 4px !important;
     }
     
-    .readiness-row {
+    .photo-row {
       display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      gap: 6px !important;
-      page-break-inside: avoid !important;
-    }
-    
-    .photo-grid {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 6px !important;
-      page-break-inside: avoid !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
     }
     
     .ynu {
@@ -211,12 +217,9 @@
       gap: 14px !important;
     }
     
-    /* Make filled values visible */
-    .filled-form input[type="text"]:not(:placeholder-shown),
-    .filled-form textarea:not(:placeholder-shown) {
+    .filled-form input[type="text"]:not(:placeholder-shown) {
       font-weight: 600 !important;
       color: #000 !important;
-      border-bottom: 1px solid #000 !important;
     }
     
     .filled-form input[type="checkbox"]:checked + label,
@@ -225,39 +228,42 @@
       text-decoration: underline !important;
     }
     
-    /* Prevent orphans */
     .section {
       page-break-inside: avoid !important;
-    }
-    
-    /* Keep header together */
-    .header {
-      page-break-after: avoid !important;
     }
   }
 </style>
 </head>
 <body>
-<!-- ═══ PAGE 1 — FORM ═══ -->
 <div class="page">
   <div class="header">
     <div>
       <h1>Machine Data Readiness Report</h1>
+      <div style="font-size:9px; color:#555; margin-top:2px;">Site Survey &amp; Integration Assessment</div>
     </div>
-    <div class="header-instructions">
-      <div><span class="tick">✔</span> Fill only what you can confirm</div>
-      <div><span class="tick">✔</span> If unsure, write "Unknown"</div>
-      <div><span class="tick">✔</span> Photos are highly valuable</div>
+    <div class="header-right">
+      <div class="header-date-row">
+        <div class="mini-field">
+          <label>Date (DD/MM/YYYY)</label>
+          <input type="text" name="date">
+        </div>
+        <div class="mini-field">
+          <label>Surveyed By</label>
+          <input type="text" name="surveyor">
+        </div>
+      </div>
+      <div class="header-instructions">
+        <div><span class="tick">✔</span> Fill only what you can confirm</div>
+        <div><span class="tick">✔</span> If unsure, write "Unknown"</div>
+        <div><span class="tick">✔</span> Photos are highly valuable</div>
+      </div>
     </div>
   </div>
+  
   <form id="form">
     <!-- 1 -->
     <div class="section">
       <div class="section-title">1 &nbsp; Customer &amp; Site Information</div>
-      <div class="row">
-        <div class="field narrow"><label>Date (DD / MM / YYYY)</label><input type="text" name="date"></div>
-        <div class="field"><label>Surveyed By</label><input type="text" name="surveyor"></div>
-      </div>
       <div class="row">
         <div class="field"><label>Customer / Company Name</label><input type="text" name="company"></div>
         <div class="field narrow"><label>Plant Location (City)</label><input type="text" name="location"></div>
@@ -267,6 +273,7 @@
         <div class="field"><label>Phone / Email</label><input type="text" name="contact_info"></div>
       </div>
     </div>
+    
     <!-- 2 -->
     <div class="section">
       <div class="section-title">2 &nbsp; Machine Overview</div>
@@ -285,7 +292,7 @@
       <div class="row">
         <div class="field">
           <label>Machine Type / Process</label>
-          <div class="check-row" style="margin-top:4px;">
+          <div class="check-row" style="margin-top:3px;">
             <div class="check-item"><input type="checkbox" id="t1"><label for="t1">Pyrometer</label></div>
             <div class="check-item"><input type="checkbox" id="t2"><label for="t2">Spectrometer</label></div>
             <div class="check-item"><input type="checkbox" id="t3"><label for="t3">Energy Meter</label></div>
@@ -298,48 +305,25 @@
         </div>
       </div>
     </div>
+    
     <!-- 3 -->
     <div class="section">
       <div class="section-title">3 &nbsp; Hardware &amp; Control System</div>
       <div class="sub-title">3.1 &nbsp; Control Panel</div>
       <div class="row">
         <div class="field">
-          <label>Dedicated Electrical Panel?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
-            <div class="check-item"><input type="radio" name="panel" id="p1"><label for="p1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="panel" id="p2"><label for="p2">No</label></div>
-            <div class="check-item"><input type="radio" name="panel" id="p3"><label for="p3">Unknown</label></div>
-          </div>
-        </div>
-        <div class="field">
-          <label>Panel Accessible?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
-            <div class="check-item"><input type="radio" name="acc" id="a1"><label for="a1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="acc" id="a2"><label for="a2">No</label></div>
-          </div>
-        </div>
-        <div class="field narrow">
-          <label>Panel Photo Taken?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
-            <div class="check-item"><input type="radio" name="pphoto" id="pp1"><label for="pp1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="pphoto" id="pp2"><label for="pp2">No</label></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label>PLC Present?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
-            <div class="check-item"><input type="radio" name="plc" id="plc1"><label for="plc1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="plc" id="plc2"><label for="plc2">No</label></div>
-            <div class="check-item"><input type="radio" name="plc" id="plc3"><label for="plc3">Unknown</label></div>
+          <div class="check-row" style="margin-top:3px;">
+            <div class="check-item"><input type="checkbox" id="ps1"><label for="ps1">Dedicated Electrical Panel</label></div>
+            <div class="check-item"><input type="checkbox" id="ps2"><label for="ps2">Panel Accessible</label></div>
+            <div class="check-item"><input type="checkbox" id="ps3"><label for="ps3">Panel Photo Taken</label></div>
+            <div class="check-item"><input type="checkbox" id="ps4"><label for="ps4">PLC Present</label></div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="field">
           <label>PLC Brand</label>
-          <div class="check-row" style="margin-top:4px;">
+          <div class="check-row" style="margin-top:3px;">
             <div class="check-item"><input type="checkbox" id="b1"><label for="b1">Siemens</label></div>
             <div class="check-item"><input type="checkbox" id="b2"><label for="b2">Mitsubishi</label></div>
             <div class="check-item"><input type="checkbox" id="b3"><label for="b3">Allen-Bradley</label></div>
@@ -349,14 +333,14 @@
           </div>
           <div class="other-inline">
             <div class="check-item"><input type="checkbox" id="b7"><label for="b7">Other:</label></div>
-            <input type="text">
+            <input type="text" name="plc_brand_other">
           </div>
         </div>
-        <div class="field medium"><label>PLC Model</label><input type="text"></div>
+        <div class="field medium"><label>PLC Model</label><input type="text" name="plc_model"></div>
       </div>
-      <div class="row"><div class="field"><label>Notes</label><textarea></textarea></div></div>
+      <div class="row"><div class="field"><label>Notes</label><input type="text" name="control_notes"></div></div>
       
-      <div class="sub-title">3.2 &nbsp; Visible Ports (Only What You See)</div>
+      <div class="sub-title">3.2 &nbsp; Visible Ports</div>
       <div class="row">
         <div class="field">
           <div class="check-row" style="margin-top:2px;">
@@ -365,7 +349,7 @@
             <div class="check-item"><input type="checkbox" id="vp3"><label for="vp3">RS-485</label></div>
             <div class="check-item"><input type="checkbox" id="vp3b"><label for="vp3b">RS-422</label></div>
             <div class="check-item"><input type="checkbox" id="vp4"><label for="vp4">RS-232</label></div>
-            <div class="check-item"><input type="checkbox" id="vp5"><label for="vp5">Analog I/O</label></div>
+
             <div class="check-item"><input type="checkbox" id="vp7"><label for="vp7">Type A</label></div>
             <div class="check-item"><input type="checkbox" id="vp8"><label for="vp8">Type C</label></div>
             <div class="check-item"><input type="checkbox" id="vp9"><label for="vp9">USB (Service)</label></div>
@@ -374,7 +358,7 @@
           </div>
           <div class="other-inline">
             <div class="check-item"><input type="checkbox" id="vp12"><label for="vp12">Other:</label></div>
-            <input type="text">
+            <input type="text" name="ports_other">
           </div>
         </div>
       </div>
@@ -382,45 +366,46 @@
       <div class="sub-title">3.3 &nbsp; Ports Already in Use?</div>
       <div class="row">
         <div class="field narrow">
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="ports_in_use" id="pu1"><label for="pu1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ports_in_use" id="pu2"><label for="pu2">No</label></div>
             <div class="check-item"><input type="radio" name="ports_in_use" id="pu3"><label for="pu3">Unknown</label></div>
           </div>
         </div>
-        <div class="field"><label>If Yes, Connected To? (Describe what ports are connected to?)</label><input type="text" name="connected_to"></div>
+        <div class="field"><label>If Yes, Connected To?</label><input type="text" name="connected_to"></div>
       </div>
       
       <div class="sub-title">3.4 &nbsp; Industrial Network Available?</div>
       <div class="row">
         <div class="field narrow">
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="indnet" id="in1"><label for="in1">PROFINET</label></div>
             <div class="check-item"><input type="radio" name="indnet" id="in2"><label for="in2">PROFIBUS</label></div>
             <div class="check-item"><input type="radio" name="indnet" id="in3"><label for="in3">No</label></div>
           </div>
         </div>
-        <div class="field"><label>Notes</label><input type="text"></div>
+        <div class="field"><label>Notes</label><input type="text" name="indnet_notes"></div>
       </div>
     </div>
-    <!-- 4 - HMI -->
+    
+    <!-- 4 -->
     <div class="section">
       <div class="section-title">4 &nbsp; HMI (Human Machine Interface)</div>
       <div class="row">
         <div class="field">
           <label>HMI Present?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="hmi" id="h1"><label for="h1">Yes</label></div>
             <div class="check-item"><input type="radio" name="hmi" id="h2"><label for="h2">No</label></div>
             <div class="check-item"><input type="radio" name="hmi" id="h3"><label for="h3">Unknown</label></div>
           </div>
         </div>
-        <div class="field"><label>HMI Software Name</label><input type="text"></div>
+        <div class="field"><label>HMI Software Name</label><input type="text" name="hmi_software"></div>
       </div>
       <div class="row">
         <div class="field">
           <label>Data Export Method</label>
-          <div class="check-row" style="margin-top:4px;">
+          <div class="check-row" style="margin-top:3px;">
             <div class="check-item"><input type="checkbox" id="ex1"><label for="ex1">USB</label></div>
             <div class="check-item"><input type="checkbox" id="ex2"><label for="ex2">Network</label></div>
             <div class="check-item"><input type="checkbox" id="ex3"><label for="ex3">Printed Reports</label></div>
@@ -428,15 +413,16 @@
           </div>
         </div>
       </div>
-      <div class="row"><div class="field"><label>Details</label><textarea></textarea></div></div>
+      <div class="row"><div class="field"><label>Details</label><input type="text" name="hmi_details"></div></div>
     </div>
-    <!-- 4B - COMPUTER SECTION -->
+    
+    <!-- 4B -->
     <div class="section">
       <div class="section-title">4B &nbsp; Industrial PC / Computer</div>
       <div class="row">
         <div class="field">
           <label>Industrial PC Connected?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="pc" id="pc1"><label for="pc1">Yes</label></div>
             <div class="check-item"><input type="radio" name="pc" id="pc2"><label for="pc2">No</label></div>
             <div class="check-item"><input type="radio" name="pc" id="pc3"><label for="pc3">Unknown</label></div>
@@ -444,7 +430,7 @@
         </div>
         <div class="field">
           <label>Data Stored Here?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="ds" id="ds1"><label for="ds1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ds" id="ds2"><label for="ds2">No</label></div>
             <div class="check-item"><input type="radio" name="ds" id="ds3"><label for="ds3">Unknown</label></div>
@@ -452,10 +438,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="field"><label>Operating System</label><input type="text"></div>
-        <div class="field"><label>Details</label><input type="text"></div>
+        <div class="field"><label>Operating System</label><input type="text" name="os"></div>
+        <div class="field"><label>Details</label><input type="text" name="pc_details"></div>
       </div>
     </div>
+    
     <!-- 5 -->
     <div class="section">
       <div class="section-title">5 &nbsp; Data Availability</div>
@@ -474,12 +461,12 @@
           </div>
           <div class="other-inline">
             <div class="check-item"><input type="checkbox" id="dl8"><label for="dl8">Other:</label></div>
-            <input type="text">
+            <input type="text" name="data_location_other">
           </div>
         </div>
       </div>
       <div class="sub-title">5.2 &nbsp; Data Types Visible</div>
-      <div class="row"><div class="field"><label>List data types you can see on screen or in reports</label><textarea></textarea></div></div>
+      <div class="row"><div class="field"><label>List data types</label><input type="text" name="data_types"></div></div>
       <div class="sub-title">5.3 &nbsp; Data Frequency</div>
       <div class="row">
         <div class="field">
@@ -493,22 +480,23 @@
           </div>
         </div>
       </div>
-      <div class="row"><div class="field"><label>Observations</label><textarea></textarea></div></div>
+      <div class="row"><div class="field"><label>Observations</label><input type="text" name="data_observations"></div></div>
     </div>
+    
     <!-- 6 -->
     <div class="section">
       <div class="section-title">6 &nbsp; Internet Availability near Hardware</div>
       <div class="row">
         <div class="field">
           <label>Internet Available near Hardware?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="ia" id="ia1"><label for="ia1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ia" id="ia2"><label for="ia2">No</label></div>
           </div>
         </div>
         <div class="field">
-          <label>Hardware already connected to network?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <label>Hardware Already Connected to Network?</label>
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="nc" id="nc1"><label for="nc1">Yes</label></div>
             <div class="check-item"><input type="radio" name="nc" id="nc2"><label for="nc2">No</label></div>
             <div class="check-item"><input type="radio" name="nc" id="nc3"><label for="nc3">Unknown</label></div>
@@ -517,29 +505,29 @@
       </div>
       <div class="row">
         <div class="field">
-          <label>Connection Method</label>
-          <div class="check-row" style="margin-top:4px;">
-            <div class="check-item"><input type="checkbox" id="cm1"><label for="cm1">Wired (Ethernet)</label></div>
+          <label>if yes?</label>
+          <div class="check-row" style="margin-top:3px;">
+            <div class="check-item"><input type="checkbox" id="cm1"><label for="cm1">LAN</label></div>
             <div class="check-item"><input type="checkbox" id="cm2"><label for="cm2">Wi-Fi</label></div>
-            <div class="check-item"><input type="checkbox" id="cm3"><label for="cm3">4G / 5G</label></div>
+            <div class="check-item"><input type="checkbox" id="cm3"><label for="cm3">Both</label></div>
           </div>
         </div>
-        <div class="field narrow"><label>RSSI (if Wi-Fi)</label><input type="text"></div>
+        <div class="field narrow"><label>Signal Strength (if Wi-Fi)</label><input type="text" name="rssi"></div>
       </div>
       <div class="row">
         <div class="field narrow">
           <label>IP Type</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="ip" id="ip1"><label for="ip1">Static</label></div>
             <div class="check-item"><input type="radio" name="ip" id="ip2"><label for="ip2">Auto</label></div>
           </div>
         </div>
-        <div class="field"><label>IP Address (if known)</label><input type="text"></div>
+        <div class="field"><label>IP Address (if known)</label><input type="text" name="ip_address"></div>
       </div>
       <div class="row">
         <div class="field">
           <label>Firewall present?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="fw" id="fw1"><label for="fw1">Yes</label></div>
             <div class="check-item"><input type="radio" name="fw" id="fw2"><label for="fw2">No</label></div>
             <div class="check-item"><input type="radio" name="fw" id="fw3"><label for="fw3">Maybe</label></div>
@@ -547,7 +535,7 @@
         </div>
         <div class="field">
           <label>IT approval needed?</label>
-          <div class="check-row ynu" style="margin-top:4px;">
+          <div class="check-row ynu" style="margin-top:3px;">
             <div class="check-item"><input type="radio" name="it" id="it1"><label for="it1">Yes</label></div>
             <div class="check-item"><input type="radio" name="it" id="it2"><label for="it2">No</label></div>
             <div class="check-item"><input type="radio" name="it" id="it3"><label for="it3">Maybe</label></div>
@@ -555,12 +543,13 @@
         </div>
       </div>
     </div>
+    
     <!-- 7 -->
     <div class="section">
       <div class="section-title">7 &nbsp; Data Readiness Level</div>
       <div class="row">
         <div class="field">
-          <div class="check-row" style="margin-top:4px;">
+          <div class="check-row" style="margin-top:3px;">
             <div class="check-item"><input type="checkbox" id="rl0"><label for="rl0">0</label></div>
             <div class="check-item"><input type="checkbox" id="rl1"><label for="rl1">1</label></div>
             <div class="check-item"><input type="checkbox" id="rl2"><label for="rl2">2</label></div>
@@ -569,27 +558,12 @@
           </div>
         </div>
       </div>
-      <div class="row"><div class="field"><label>Reason</label><textarea></textarea></div></div>
+      <div class="row"><div class="field"><label>Reason</label><input type="text" name="readiness_reason"></div></div>
     </div>
+    
     <!-- 8 -->
     <div class="section">
-      <div class="section-title">8 &nbsp; Likely Integration Method</div>
-      <div class="row">
-        <div class="field">
-          <div class="check-row" style="margin-top:2px;">
-            <div class="check-item"><input type="checkbox" id="im1"><label for="im1">Direct Machine Connection</label></div>
-            <div class="check-item"><input type="checkbox" id="im2"><label for="im2">HMI</label></div>
-            <div class="check-item"><input type="checkbox" id="im3"><label for="im3">AI Camera Reading</label></div>
-            <div class="check-item"><input type="checkbox" id="im4"><label for="im4">Hybrid</label></div>
-            <div class="check-item"><input type="checkbox" id="im5"><label for="im5">Not Sure</label></div>
-          </div>
-        </div>
-      </div>
-      <div class="row"><div class="field"><label>Why</label><textarea></textarea></div></div>
-    </div>
-    <!-- 9 -->
-    <div class="section">
-      <div class="section-title">9 &nbsp; Constraints / Risks</div>
+      <div class="section-title">8 &nbsp; Constraints / Risks</div>
       <div class="row">
         <div class="field">
           <div class="check-row" style="margin-top:2px;">
@@ -601,35 +575,56 @@
           </div>
           <div class="other-inline">
             <div class="check-item"><input type="checkbox" id="cr6"><label for="cr6">Other:</label></div>
-            <input type="text">
+            <input type="text" name="constraints_other">
           </div>
         </div>
       </div>
-      <div class="row"><div class="field"><label>Details</label><textarea></textarea></div></div>
+      <div class="row"><div class="field"><label>Details</label><input type="text" name="constraints_details"></div></div>
     </div>
+    
+    <!-- 9 -->
+    <div class="section">
+      <div class="section-title">9 &nbsp; Likely Integration Method</div>
+      <div class="row">
+        <div class="field">
+          <div class="check-row" style="margin-top:2px;">
+            <div class="check-item"><input type="checkbox" id="im1"><label for="im1">Direct Machine Connection</label></div>
+            <div class="check-item"><input type="checkbox" id="im2"><label for="im2">HMI</label></div>
+            <div class="check-item"><input type="checkbox" id="im3"><label for="im3">AI Camera Reading</label></div>
+            <div class="check-item"><input type="checkbox" id="im4"><label for="im4">Hybrid</label></div>
+            <div class="check-item"><input type="checkbox" id="im5"><label for="im5">Not Sure</label></div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><div class="field"><label>Why</label><input type="text" name="integration_why"></div></div>
+    </div>
+    
     <!-- 10 -->
     <div class="section">
       <div class="section-title">10 &nbsp; Photo Checklist</div>
-      <div class="photo-grid">
-        <div class="photo-box"><input type="checkbox" id="ph1"><label for="ph1">Machine Nameplate</label></div>
-        <div class="photo-box"><input type="checkbox" id="ph2"><label for="ph2">Panel Interior</label></div>
-        <div class="photo-box"><input type="checkbox" id="ph3"><label for="ph3">Communication Ports</label></div>
-        <div class="photo-box"><input type="checkbox" id="ph4"><label for="ph4">HMI Screen</label></div>
-        <div class="photo-box"><input type="checkbox" id="ph5"><label for="ph5">Network Cabinet</label></div>
-        <div class="photo-box"><input type="checkbox" id="ph6"><label for="ph6">Overall Machine</label></div>
+      <div class="photo-row">
+        <div class="photo-item"><input type="checkbox" id="ph1"><label for="ph1">Machine Nameplate</label></div>
+        <div class="photo-item"><input type="checkbox" id="ph2"><label for="ph2">Panel Interior</label></div>
+        <div class="photo-item"><input type="checkbox" id="ph3"><label for="ph3">Communication Ports</label></div>
+        <div class="photo-item"><input type="checkbox" id="ph4"><label for="ph4">HMI Screen</label></div>
+        <div class="photo-item"><input type="checkbox" id="ph5"><label for="ph5">Network Cabinet</label></div>
+        <div class="photo-item"><input type="checkbox" id="ph6"><label for="ph6">Overall Machine</label></div>
       </div>
     </div>
+    
     <!-- 11 -->
     <div class="section">
       <div class="section-title">11 &nbsp; Additional Comments</div>
-      <div class="row"><div class="field"><textarea style="min-height:60px;"></textarea></div></div>
+      <div class="row"><div class="field"><input type="text" name="comments" style="padding:6px 4px;"></div></div>
     </div>
+    
     <div class="submit-bar">
       <button type="button" class="btn-submit" onclick="generatePDF()">Save as PDF</button>
       <button type="reset" class="btn-reset">Clear Form</button>
     </div>
   </form>
 </div>
+
 <script>
 function generatePDF() {
   const form = document.querySelector('form');
