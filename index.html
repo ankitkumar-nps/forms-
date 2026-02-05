@@ -522,7 +522,7 @@
       </div>
       <div class="row"><div class="field"><label>Observations</label><textarea></textarea></div></div>
     </div>
-    <!-- 6 -->
+    <!-- 6 - MODIFIED LAYOUT -->
     <div class="section">
       <div class="section-title">6 &nbsp; Internet Availability near Hardware</div>
       <div class="row">
@@ -531,6 +531,14 @@
           <div class="check-row ynu" style="margin-top:6px;">
             <div class="check-item"><input type="radio" name="ia" id="ia1"><label for="ia1">Yes</label></div>
             <div class="check-item"><input type="radio" name="ia" id="ia2"><label for="ia2">No</label></div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Is Hardware already connected to a network?</label>
+          <div class="check-row ynu" style="margin-top:6px;">
+            <div class="check-item"><input type="radio" name="hw_network" id="hwn1"><label for="hwn1">Yes</label></div>
+            <div class="check-item"><input type="radio" name="hw_network" id="hwn2"><label for="hwn2">No</label></div>
+            <div class="check-item"><input type="radio" name="hw_network" id="hwn3"><label for="hwn3">Maybe</label></div>
           </div>
         </div>
       </div>
@@ -543,18 +551,6 @@
             <div class="check-item"><input type="radio" name="conn_type" id="ct3"><label for="ct3">Both</label></div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label>Is Hardware already connected to a network?</label>
-          <div class="check-row ynu" style="margin-top:6px;">
-            <div class="check-item"><input type="radio" name="hw_network" id="hwn1"><label for="hwn1">Yes</label></div>
-            <div class="check-item"><input type="radio" name="hw_network" id="hwn2"><label for="hwn2">No</label></div>
-            <div class="check-item"><input type="radio" name="hw_network" id="hwn3"><label for="hwn3">Maybe</label></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
         <div class="field">
           <label>Is Hardware has Internet?</label>
           <div class="check-row ynu" style="margin-top:6px;">
@@ -573,8 +569,6 @@
             <div class="check-item"><input type="radio" name="fw" id="fw3"><label for="fw3">Maybe</label></div>
           </div>
         </div>
-      </div>
-      <div class="row">
         <div class="field">
           <label>IT approval needed?</label>
           <div class="check-row ynu" style="margin-top:6px;">
@@ -712,7 +706,7 @@
           <div class="ex-label">Example</div>
           Customer: Tata Steel Ltd &nbsp;&nbsp; Plant: Jamshedpur Unit 3<br>
           Contact: Rajesh Mehta — Maintenance Manager<br>
-          Phone: 0657-XXX-XXXX &nbsp; Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a5804474f425e4b6a5e4b5e4b595e4f4f4604494547">[email&#160;protected]</a>
+          Phone: 0657-XXX-XXXX &nbsp; Email: r.mehta@tatasteel.com
         </div>
       </div>
     </div>
@@ -939,7 +933,7 @@
   </div>
   <div class="page-footer">Machine Data Readiness Report — Filling Guide — Page 3 of 3</div>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function generatePDF() {
   // Get form
   const form = document.querySelector('form');
@@ -1023,4 +1017,10 @@ function generatePDF() {
   }
   
   .readiness-row {
-    display: fle
+    display: flex !important;
+    gap: 8px !important;
+  }
+}
+</style>
+</body>
+</html>
